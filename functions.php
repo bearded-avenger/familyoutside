@@ -10,6 +10,7 @@ class foSetup {
 		define('FO_THEME_DIR', 				get_template_directory());
 		define('FO_THEME_URL', 				get_template_directory_uri());
 
+		add_action('wp_head',				array($this,'typekit'));
 		add_action( 'after_setup_theme', 	array($this,'setup'));
 		add_action( 'widgets_init', 		array($this,'widgets_init') );
 		add_action( 'wp_enqueue_scripts', 	array($this,'scripts') );
@@ -73,6 +74,13 @@ class foSetup {
 			'before_title'  => '<h2 class="widget-title">',
 			'after_title'   => '</h2>',
 		) );
+	}
+
+	function typekit(){
+		?>
+		<script src="https://use.typekit.net/vjc7gyu.js"></script>
+		<script>try{Typekit.load({ async: true });}catch(e){}</script>
+		<?php
 	}
 
 	/**
