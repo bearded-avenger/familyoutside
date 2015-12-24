@@ -12,13 +12,6 @@
 	max-width:$container-sm;
 }
 
-// Temporary
-#page {
-	max-width:$container-lg;
-	margin:0 auto;
-	padding:0 $grid-gutter-width;
-}
-
 // Helper Classes
 .unstyled {
 	@include unstyled();
