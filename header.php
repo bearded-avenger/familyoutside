@@ -20,33 +20,40 @@
 <?php wp_head(); ?>
 </head>
 
+<?php
+	$name = get_bloginfo( 'name', 'display' );
+?>
+
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'family-outside' ); ?></a>
 
-	<header id="masthead" class="site-header" role="banner">
+	<header id="masthead" class="header" role="banner">
 		<div class="container">
-			<div class="site-branding">
-				<?php
-				if ( is_front_page() && is_home() ) : ?>
-					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php else : ?>
-					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-				endif;
 
-				$description = get_bloginfo( 'description', 'display' );
-				if ( $description || is_customize_preview() ) : ?>
-					<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-				<?php
-				endif; ?>
-			</div><!-- .site-branding -->
+			<div class="header--branding">
+				<h1 class="header--title">
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+						<img src="<?php echo FO_THEME_URL.'/assets/img/logo.png';?>" alt="<?php echo $name;?>">
+						<span>A Family Outside</span>
+					</a>
+				</h1>
+			</div>
 
-			<nav id="site-navigation" class="main-navigation" role="navigation">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'family-outside' ); ?></button>
-				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-			</nav><!-- #site-navigation -->
+			<div class="header--branding__secondary">
+				<span>Families that hike together stay together</span>
+				<ul class="header--actions">
+					<li><a href="#">Login</a></li>
+					<li><a href="#" class="btn btn-primary btn-xs">Signup</a></li>
+				</ul>
+			</div>
+
+			<div class="header--secondary">
+				<nav id="header--navigation" class="header--navigation" role="navigation">
+					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+				</nav>
+			</div>
+
 		</div>
-	</header><!-- #masthead -->
+	</header>
 
 	<div id="content" class="container">

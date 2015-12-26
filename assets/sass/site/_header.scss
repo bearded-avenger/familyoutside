@@ -1,0 +1,111 @@
+.header {
+	background:#FFF;
+	border-bottom:1px solid $border-color;
+
+	.container {
+		@include clearfix();
+	}
+}
+
+// Heade Branding Float
+.header--branding {
+	@include make-md-column(5);
+	padding-left:0;
+	padding-top:$padding--sm;
+	padding-bottom:$padding--sm;
+}
+
+// Logo
+.header--title {
+	margin:0;
+	img {
+		max-width:60px;
+	}
+	span {
+		color:$text-color;
+		font-weight:700;
+		text-transform:uppercase;
+		font-size:$font-size-h3;
+		text-align:right;
+	}
+
+	a:hover,
+	a:active {
+		text-decoration:none;
+	}
+
+}
+
+// Header Branding Secondary
+.header--branding__secondary {
+	@include make-md-column(7);
+	padding-right:0;
+	padding-top:$padding--sm;
+	padding-bottom:$padding--sm;
+	position:relative;
+	top:$padding;
+
+	span {
+		color:$text-muted;
+		font-size:$font-size-small;
+		font-style:italic;
+		top:2px;
+		right:$padding;
+		@include make-md-column(9);
+	}
+	.header--actions {
+		@include unstyled();
+		@include make-md-column(3);
+		text-align:right;
+
+		li {
+			display:inline-block;
+
+			&:first-child {
+				font-size:$font-size-small;
+				margin-right:$padding--sm;
+
+				a {
+					color:$text-muted;
+				}
+			}
+		}
+
+		&:before {
+			content:'';
+			position:absolute;
+			top:-30px;
+			left:0;
+			height:80px;
+			border-left:1px solid $border-color;
+			width:1px;
+		}
+	}
+}
+
+// Header Secondary
+.header--secondary {
+	clear:left;
+}
+
+// Navigation
+.header--navigation {
+	border-top:1px solid $border-color;
+	ul {
+		@include unstyled();
+		@include clearfix();
+
+		li {
+			float:left;
+			padding:$padding--sm 0;
+			margin-right:$padding;
+		}
+
+		a {
+			color:$text-color;
+			text-transform:uppercase;
+			font-weight:700;
+			font-size:$font-size-small;
+		}
+	}
+}
