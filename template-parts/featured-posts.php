@@ -17,7 +17,25 @@ $q = new wp_query( $args );
 
 	<?php if ( $q->have_posts() ) : while ( $q->have_posts() ) : $q->the_post();
 
-		echo get_the_title();
+		if ( 0 == $q->current_post ) { ?>
+
+			<div class="featured-posts__top">
+				<?php echo get_the_title();?>
+			</div>
+
+		<?php }
+
+		if ( 1 == $q->current_post ){ ?>
+			<div class="featured-posts__lt">
+				<?php echo get_the_title();?>
+			</div>
+		<?php }
+
+		if  ( 2 == $q->current_post ){ ?>
+			<div class="featured-posts__rt">
+				<?php echo get_the_title();?>
+			</div>
+		<?php }
 
 	endwhile;endif;wp_reset_query();?>
 
