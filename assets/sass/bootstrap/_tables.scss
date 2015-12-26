@@ -19,7 +19,7 @@ th {
 
 // Baseline styles
 
-.table {
+table {
   width: 100%;
   max-width: 100%;
   margin-bottom: $line-height-computed;
@@ -168,7 +168,7 @@ table {
 // by enabling horizontal scrolling. Only applies <768px. Everything above that
 // will display normally.
 
-.table-responsive {
+table {
   overflow-x: auto;
   min-height: 0.01%; // Workaround for IE9 bug (see https://github.com/twbs/bootstrap/issues/14837)
 

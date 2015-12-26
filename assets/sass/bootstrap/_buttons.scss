@@ -71,6 +71,14 @@ a.btn {
 .btn-primary {
   @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
 }
+// Inverted (opposite of primary)
+.btn-inverse {
+	@include button-variant($btn-inverse-color, $btn-inverse-bg, $btn-inverse-border);
+}
+// Ghost (no background)
+.btn-ghost {
+	@include button-variant($btn-ghost-color, $btn-ghost-bg, $btn-ghost-border);
+}
 // Success appears as green
 .btn-success {
   @include button-variant($btn-success-color, $btn-success-bg, $btn-success-border);
@@ -87,6 +95,7 @@ a.btn {
 .btn-danger {
   @include button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-border);
 }
+
 
 
 // Link buttons
