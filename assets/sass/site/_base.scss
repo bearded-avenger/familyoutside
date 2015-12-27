@@ -12,6 +12,21 @@
 	max-width:$container-sm;
 }
 
+#content {
+	padding-top:$padding;
+	@include clearfix();
+}
+
+// main content
+#primary {
+	@include make-md-column(9);
+}
+
+// sidebar
+#secondary {
+	@include make-md-column(3);
+}
+
 // Helper Classes
 .unstyled {
 	@include unstyled();

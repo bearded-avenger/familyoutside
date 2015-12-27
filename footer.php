@@ -13,8 +13,8 @@
 
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
+	<footer id="colophon" class="footer" role="contentinfo">
+		<div class="container">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'family-outside' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'family-outside' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
 			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'family-outside' ), 'family-outside', '<a href="http://nickhaskins.com" rel="designer">Nick Haskins</a>' ); ?>

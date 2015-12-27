@@ -1,0 +1,10 @@
+.footer {
+	background:#FFF;
+	border-top:1px solid $border-color;
+
+	.container {
+		padding-top:$padding;
+		padding-bottom:$padding;
+		@include clearfix();
+	}
+}

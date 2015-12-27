@@ -3,33 +3,32 @@ get_header();
 
 	get_template_part('template-parts/featured-posts');?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	<main id="primary" class="site-main" role="main">
 
-		<?php
+	<?php
 
-			$args = array(
-				'post_type' 	=> array('hikes', 'reviews', 'post'),
-				'post_status'	=> 'publish',
-				'post__not_in'	=> fo_get_featured_ids()
-			);
-			$q = new wp_query( $args );
+		$args = array(
+			'post_type' 	=> array('hikes', 'reviews', 'post'),
+			'post_status'	=> 'publish',
+			'post__not_in'	=> fo_get_featured_ids()
+		);
+		$q = new wp_query( $args );
 
-			if ( $q->have_posts() ) :
+		if ( $q->have_posts() ) :
 
-				while ( $q->have_posts() ) : $q->the_post();
+			while ( $q->have_posts() ) : $q->the_post();
 
-					get_template_part( 'template-parts/content', get_post_format() );
+				get_template_part( 'template-parts/content', get_post_format() );
 
-				endwhile;
+			endwhile;
 
-				the_posts_navigation();
+			the_posts_navigation();
 
-			endif;
-		?>
+		endif;
+	?>
 
-		</main>
-	</div>
+	</main>
 
-<?php
+	<?php
+get_sidebar();
 get_footer();
