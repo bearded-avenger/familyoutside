@@ -1,0 +1,50 @@
+.object-mast--header {
+	margin:$padding 0;
+
+	.object-mast--title {
+		margin:0;
+	}
+}
+
+.object-mast--meta {
+	background:#FFF;
+	border-bottom:1px solid $border-color;
+	padding:$padding--sm 0;
+
+	ul {
+		@include unstyled();
+		@include clearfix();
+
+		li {
+			font-size:$font-size-small;
+
+			&:first-child {
+				padding-left:0;
+			}
+			&:last-child {
+				padding-right:0;
+			}
+			span:first-child {
+				font-weight:700;
+			}
+			span:last-child {
+				color:$text-muted;
+			}
+		}
+	}
+}
+
+.object-mast--meta__hikes {
+	li {
+		float:left;
+		width:20%;
+		padding-right: $padding;
+	}
+}
+
+.object-mast--meta__reviews {
+
+	li {
+		@include make-md-column(3);
+	}
+}

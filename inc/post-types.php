@@ -37,12 +37,38 @@ class foPostTypes{
 			'query_var' 				=> true,
 			'can_export' 				=> true,
 			'has_archive'				=> 'hikes',
-			'taxonomies' 				=> array('hike_difficulty','hike_rating','hike_ages'),
+			'taxonomies' 				=> array('hike_location','hike_difficulty','hike_rating','hike_ages',),
 			'rewrite'					=> array('with_front' => false, 'slug' => 'hike'),
 			'capability_type' 			=> 'post'
 		);
 
 		register_post_type( 'hikes', $hike_args );
+
+		//////////
+		// Hike Location
+		///////////
+		$hike_location = array(
+			'name'              => _x( 'Hike Location', 'taxonomy general name' ),
+			'singular_name'     => _x( 'Hike Location', 'taxonomy singular name' ),
+			'search_items'      => __( 'Search Locations' ),
+			'all_items'         => __( 'All Locations' ),
+			'parent_item'       => __( 'Parent Location' ),
+			'parent_item_colon' => __( 'Parent Location:' ),
+			'edit_item'         => __( 'Edit Location' ),
+			'update_item'       => __( 'Update Location' ),
+			'add_new_item'      => __( 'Add New Location' ),
+			'new_item_name'     => __( 'New Location' ),
+			'menu_name'         => __( 'Hike Location' ),
+		);
+		$hike_location_args = array(
+			'hierarchical'      => true,
+			'labels'            => $hike_location,
+			'show_ui'           => true,
+			'show_admin_column' => true,
+			'query_var'         => true,
+		);
+
+		register_taxonomy( 'hike_location', 'hikes' ,$hike_location_args );
 
 
 		//////////

@@ -12,9 +12,6 @@
 @import "bootstrap/normalize";
 @import "bootstrap/print";
 
-// Font Awesome
-@import "bootstrap/font-awesome/scss/font-awesome";
-
 // Core CSS
 @import "bootstrap/scaffolding";
 @import "bootstrap/type";
@@ -57,9 +54,13 @@
 @import "bootstrap/utilities";
 @import "bootstrap/responsive-utilities";
 
+// Font Awesome
+@import "bootstrap/font-awesome/scss/font-awesome";
+
 // Site Specific
 @import "site/base";
 @import "site/header";
 @import "site/footer";
 @import "site/featured-posts";
 @import "site/post-archive";
+@import "site/object-mast";

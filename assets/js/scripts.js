@@ -38,9 +38,12 @@
 (function( $ ) {
 
 	$(document).ready(function(){
-		var gallery = $("#object-gallery").portfolio({
-		});
-        gallery.init();
+
+		if ( $('#object-gallery').length ){
+			var gallery = $("#object-gallery").portfolio({
+			});
+	        gallery.init();
+	    }
 	});
 
 })( jQuery );

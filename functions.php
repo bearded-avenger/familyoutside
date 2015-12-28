@@ -33,7 +33,6 @@ class foSetup {
 		}
 
 		require FO_THEME_DIR.'/inc/template-tags.php';
-		require FO_THEME_DIR.'/inc/extras.php';
 		require FO_THEME_DIR.'/inc/jetpack.php';
 		require FO_THEME_DIR.'/inc/options.php';
 

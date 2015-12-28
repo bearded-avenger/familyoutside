@@ -1,6 +1,30 @@
 <?php
 
 /**
+*	Get the current term for an object
+*
+*	@param $post_id int id of the object to get the terms for
+*	@param $as_slug bool return the slug or a span element
+*	@param $term string the term to check for (hike_location, hike_rating)
+*	@since 1.0
+*
+*/
+function fo_get_term( $post_id = 0, $term = 'hike_location', $as_slug = false ) {
+
+	if ( empty( $post_id ) )
+		$post_id = get_the_ID();
+
+	$terms = wp_get_object_terms( $post_id, $term , array( 'parent' => 0 ) );
+	$terms = $terms ? current( $terms ) : false;
+
+	if ( empty( $terms ) )
+		return;
+
+	return true == $as_slug ? $terms->slug : esc_html( $terms->name );
+
+}
+
+/**
 *	Return an array of featured posts to use for teh index featured posts area
 *
 *	@since 1.0
