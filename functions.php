@@ -38,6 +38,7 @@ class foSetup {
 
 		require FO_THEME_DIR.'/inc/theme-functions.php';
 		require FO_THEME_DIR.'/inc/hike-functions.php';
+		require FO_THEME_DIR.'/inc/review-functions.php';
 	}
 
 	/**

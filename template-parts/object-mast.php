@@ -13,15 +13,17 @@
 	<div class="object-mast--header">
 		<div class="container">
 			<?php the_title( '<h2 class="object-mast--title">','</h2>' );?>
-			<div class="object-mast--location">
-				<?php echo fo_get_hike_location();?>
-			</div>
+			<?php if ( 'hikes' == get_post_type() ){ ?>
+				<div class="object-mast--location"><?php echo fo_get_hike_location();?></div>
+			<?php } else { ?>
+				<p class="entry--meta">
+					<?php family_outside_posted_on(); ?>
+				</p>
+			<?php } ?>
 		</div>
 	</div>
 
-	<div class="object-mast--gallery">
-		<?php echo fo_draw_object_gallery();?>
-	</div>
+	<?php echo fo_draw_object_gallery();?>
 
 	<div class="object-mast--meta">
 		<div class="container">
@@ -35,6 +37,7 @@
 					<li>
 						<span>Time:</span>
 						<span><?php echo fo_get_hike_time();?></span>
+					</li>
 					<li>
 						<span>Ages:</span>
 						<span><?php echo fo_get_hike_ages();?></span>
@@ -45,25 +48,26 @@
 					</li>
 					<li>
 						<span>Rating:</span>
-						<span><?php echo fo_get_hike_rating();?></span>
+						<span><?php echo fo_get_object_rating();?></span>
 					</li>
 				</ul>
 			<?php } else { ?>
 				<ul class="object-mast--meta__reviews">
 					<li>
-						<span>Price</span>
-						<span>$20</span>
+						<span>Price:</span>
+						<span>$<?php echo fo_get_review_price();?></span>
 					</li>
 					<li>
-						<span>Manufacturer</span>
-						<span>$20</span>
-					</li>
-						<span>Category</span>
-						<span>$20</span>
+						<span>Manufacturer:</span>
+						<span><?php echo fo_get_review_manufacturer();?></span>
 					</li>
 					<li>
-						<span>Rating</span>
-						<span>$20</span>
+						<span>Category:</span>
+						<span><?php echo fo_get_review_category();?></span>
+					</li>
+					<li>
+						<span>Rating:</span>
+						<span><?php echo fo_get_object_rating(get_the_ID(),'product_rating');?></span>
 					</li>
 				</ul>
 			<?php } ?>

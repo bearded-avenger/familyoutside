@@ -96,6 +96,7 @@ output {
 //
 select,
 textarea,
+input[type="submit"],
 input[type="text"],
 input[type="password"],
 input[type="datetime"],
@@ -160,6 +161,12 @@ input[type="color"],
 // Reset height for `textarea`s
 textarea.form-control {
   height: auto;
+}
+
+input[type="submit"]{
+	display:inline-block;
+	width:auto;
+	@extend .btn-primary;
 }
 
 

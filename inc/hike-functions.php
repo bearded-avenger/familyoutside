@@ -61,57 +61,6 @@ function fo_get_hike_difficulty( $post_id = 0 ){
 }
 
 /**
-*	Get the rating of a hike
-*
-*	@param $post_id int id of the post
-*	@since 1.0
-*/
-function fo_get_hike_rating( $post_id = 0 ){
-
-	if ( empty( $post_id ) )
-		$post_id = get_the_ID();
-
-	$rating = fo_get_term( $post_id, 'hike_rating', true );
-
-	$out = '';
-
-	if ( 'one-star' == $rating ) {
-		$out .= '<i class="fo-icon fo-icon-star"></i>
-				<i class="fo-icon fo-icon-star-o"></i>
-				<i class="fo-icon fo-icon-star-o"></i>
-				<i class="fo-icon fo-icon-star-o"></i>
-				<i class="fo-icon fo-icon-star-o"></i>';
-	} elseif ( 'two-star' == $rating ) {
-		$out .= '<i class="fo-icon fo-icon-star"></i>
-				<i class="fo-icon fo-icon-star"></i>
-				<i class="fo-icon fo-icon-star-o"></i>
-				<i class="fo-icon fo-icon-star-o"></i>
-				<i class="fo-icon fo-icon-star-o"></i>';
-	} elseif ( 'three-star' == $rating ) {
-		$out .= '<i class="fo-icon fo-icon-star"></i>
-				<i class="fo-icon fo-icon-star"></i>
-				<i class="fo-icon fo-icon-star"></i>
-				<i class="fo-icon fo-icon-star-o"></i>
-				<i class="fo-icon fo-icon-star-o"></i>';
-	} elseif ( 'four-star' == $rating ) {
-		$out .= '<i class="fo-icon fo-icon-star"></i>
-				<i class="fo-icon fo-icon-star"></i>
-				<i class="fo-icon fo-icon-star"></i>
-				<i class="fo-icon fo-icon-star"></i>
-				<i class="fo-icon fo-icon-star-o"></i>';
-	} elseif ( 'five-star' == $rating ) {
-		$out .= '<i class="fo-icon fo-icon-star"></i>
-				<i class="fo-icon fo-icon-star"></i>
-				<i class="fo-icon fo-icon-star"></i>
-				<i class="fo-icon fo-icon-star"></i>
-				<i class="fo-icon fo-icon-star"></i>';
-	}
-
-	return $out;
-
-}
-
-/**
 *	Get the ages of a hike
 *
 *	@param $post_id int id of the post

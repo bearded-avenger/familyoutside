@@ -4,6 +4,36 @@
 	.object-mast--title {
 		margin:0;
 	}
+	.object-mast--location {
+		font-size:$font-size-small;
+		color:$text-muted;
+
+		&:before {
+			content:$fa-var-map-marker;
+			font-family:FontAwesome;
+			margin-right:5px;
+		}
+	}
+}
+
+.object-mast--media {
+	position:relative;
+
+	&.no-gallery {
+		height:0;
+		padding-bottom:35%;
+	}
+
+	.object-banner {
+		position:absolute;
+		left:0;
+		top:0;
+		width:100%;
+		height:100%;
+		background-size:cover;
+		background-position:center center;
+		//background-attachment:fixed;
+	}
 }
 
 .object-mast--meta {

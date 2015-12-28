@@ -60,6 +60,13 @@ class foPostMeta{
 	    ) );
 
 	    $cmb->add_field( array(
+	        'name'       => 'Product Price',
+	        'desc'       => 'Price of the product (ex: 25)',
+	        'id'         => '_product_price',
+	        'type'       => 'text'
+	    ) );
+
+	    $cmb->add_field( array(
 	        'name'       => 'Product Manufacturer',
 	        'desc'       => 'Name of the company who makes the product',
 	        'id'         => '_product_company',
