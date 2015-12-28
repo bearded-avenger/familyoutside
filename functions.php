@@ -26,11 +26,16 @@ class foSetup {
 	*/
 	function includes(){
 
+		require FO_THEME_DIR.'/inc/post-types.php';
 		require FO_THEME_DIR.'/inc/theme-functions.php';
 		require FO_THEME_DIR.'/inc/template-tags.php';
 		require FO_THEME_DIR.'/inc/extras.php';
 		require FO_THEME_DIR.'/inc/jetpack.php';
 		require FO_THEME_DIR.'/inc/options.php';
+
+		if ( is_admin() ){
+			require FO_THEME_DIR.'/inc/post-meta.php';
+		}
 	}
 
 	/**
