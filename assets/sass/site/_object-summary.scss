@@ -10,11 +10,11 @@
 	}
 
 	.object-summary--lt {
-		@include make-md-column(3);
+		@include make-md-column(4);
 		padding-left:0;
 	}
 	.object-summary--rt {
-		@include make-md-column(9);
+		@include make-md-column(8);
 		padding-right:0;
 	}
 }
