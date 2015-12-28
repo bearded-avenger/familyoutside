@@ -34,6 +34,17 @@ class foPostMeta{
 	        'type'       => 'text'
 	    ) );
 
+		$cmb->add_field( array(
+		    'name' => 'Hike Gallery Images',
+		    'desc' => 'Upload some images for this hike',
+		    'id'   => '_object_gallery',
+		    'type' => 'file_list',
+		    'options' => array(
+		        'add_upload_files_text' 	=> 'Add or Upload Images', // default: "Add or Upload Files"
+		        'file_text' 				=> 'Image', // default: "File:"
+		    )
+		) );
+
 	}
 
 	// Product Review Metaboxes
