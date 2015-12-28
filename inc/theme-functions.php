@@ -37,7 +37,7 @@ function fo_get_gallery_images( $post_id = 0 ){
 *	@param $post_id int id of the post
 *	@since 1.0
 */
-function fo_draw_object_gallery( $post_id = 0, $size = 'medium' ) {
+function fo_draw_object_gallery( $post_id = 0, $size = 'full' ) {
 
 	if ( empty( $post_id ) )
 		$post_id = get_the_ID();
@@ -47,11 +47,11 @@ function fo_draw_object_gallery( $post_id = 0, $size = 'medium' ) {
 	if ( empty ( $files ) )
 		return false;
 
-	echo '<ul>';
+	echo '<div id="object-gallery">';
 	    foreach ( (array) $files as $attachment_id => $attachment_url ) {
-	        echo '<li>';
-	        	echo wp_get_attachment_image( $attachment_id, $size );
-	        echo '</li>';
+
+	    	$image = wp_get_attachment_image_src( $attachment_id, $size );
+	        echo '<img data-src="'.$image[0].'" >';
 	    }
-    echo '</ul>';
+    echo '</div>';
 }

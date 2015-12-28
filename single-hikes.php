@@ -7,9 +7,7 @@
  * @package Family_Outside
  */
 
-get_header();
-
-	get_template_part('template-parts/object-mast');?>
+get_header(); ?>
 
 	<main id="primary" class="site-main" role="main">
 		<?php

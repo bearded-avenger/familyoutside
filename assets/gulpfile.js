@@ -21,7 +21,8 @@ gulp.task('styles', function(){
 
 gulp.task('scripts', function() {
   	return gulp.src([
-             	'js/scripts.js'
+  				'js/portfolio.pack.min.js',
+  				'js/general.js'
   		])
     	.pipe(concat('scripts.js'))
     	.pipe(gulp.dest('js/'));
