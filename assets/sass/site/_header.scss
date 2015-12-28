@@ -51,6 +51,7 @@
 		font-style:italic;
 		top:2px;
 		right:$padding;
+		text-align:right;
 		@include make-md-column(9);
 	}
 	.header--actions {

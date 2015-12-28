@@ -226,3 +226,8 @@
 	margin:0;
 	list-style:none;
 }
+
+@mixin calc($property, $expression) { 
+  #{$property}: -webkit-calc(#{$expression}); 
+  #{$property}: calc(#{$expression}); 
+}

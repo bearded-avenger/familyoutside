@@ -1,0 +1,32 @@
+.post--archive {
+	@include clearfix();
+	margin-bottom:$padding;
+	padding-bottom:$padding;
+	border-bottom:1px solid $border-color;
+
+	.post--archive__image {
+		float:left;
+		width:150px;
+		margin-right:$padding;
+	}
+
+	.post--archive__content {
+		float:left;
+		@include calc(width, "100% - 170px");
+
+	}
+
+	.post--archive__title {
+		margin:0 0 $padding--sm;
+
+		a {
+			color:$text-color;
+		}
+	}
+
+	.entry--meta {
+		margin-bottom:0;
+		font-size:$font-size-small;
+		color:$text-muted;
+	}
+}

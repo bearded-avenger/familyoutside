@@ -18,7 +18,7 @@ get_header();
 
 			while ( $q->have_posts() ) : $q->the_post();
 
-				get_template_part( 'template-parts/content', get_post_format() );
+				get_template_part( 'template-parts/content-archive', get_post_format() );
 
 			endwhile;
 

@@ -19,12 +19,14 @@
 
 // main content
 #primary {
-	@include make-md-column(9);
+	@include make-md-column(8);
+	padding-left:0;
 }
 
 // sidebar
 #secondary {
-	@include make-md-column(3);
+	@include make-md-column(4);
+	padding-right:0;
 }
 
 // Helper Classes
