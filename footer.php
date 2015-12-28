@@ -13,6 +13,12 @@
 
 	</div><!-- #content -->
 
+	<?php if ( ('hikes' == get_post_type() || 'reviews' == get_post_type() ) && is_single() ) {
+		get_template_part('template-parts/object-summary');
+
+	}
+	?>
+
 	<footer id="colophon" class="footer" role="contentinfo">
 		<div class="container">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'family-outside' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'family-outside' ), 'WordPress' ); ?></a>

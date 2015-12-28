@@ -34,6 +34,20 @@ class foPostMeta{
 	        'type'       => 'text'
 	    ) );
 
+    	$cmb->add_field( array(
+	        'name'       => 'Hike Location',
+	        'desc'       => 'GPS Coordinates for Hike Location',
+	        'id'         => '_hike_location',
+	        'type'       => 'text'
+	    ) );
+
+    	$cmb->add_field( array(
+	        'name'       => 'Hike Location Description',
+	        'desc'       => 'Description of how to get to hike area',
+	        'id'         => '_hike_location_desc',
+	        'type'       => 'textarea'
+	    ) );
+
 		$cmb->add_field( array(
 		    'name' => 'Hike Gallery Images',
 		    'desc' => 'Upload some images for this hike',
@@ -71,6 +85,13 @@ class foPostMeta{
 	        'desc'       => 'Name of the company who makes the product',
 	        'id'         => '_product_company',
 	        'type'       => 'text'
+	    ) );
+
+	    $cmb->add_field( array(
+	        'name'       => 'Product TLDR;',
+	        'desc'       => 'Give a summary, for those users who are too lazy to read the whole review.',
+	        'id'         => '_product_summary',
+	        'type'       => 'wysiwyg'
 	    ) );
 
 	}

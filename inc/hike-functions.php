@@ -25,6 +25,39 @@ function fo_get_hike_location( $post_id = 0 ){
 
 	return sprintf('%s, %s', $state, $city);
 
+}
+
+/**
+*	Get the gps coordinates for teh hike trailhead (different from hike location)
+*
+*	@param $post_id int id of the post
+*	@since 1.0
+*/
+function fo_get_hike_gps_location( $post_id = 0 ){
+
+	if ( empty( $post_id ) )
+		$post_id = get_the_ID();
+
+	$ret = get_post_meta( $post_id, '_hike_location', true );
+
+	return $ret ? $ret : false;
+
+}
+
+/**
+*	Get the description of the location (used with gps coordinates)
+*
+*	@param $post_id int id of the post
+*	@since 1.0
+*/
+function fo_get_hike_location_description( $post_id = 0 ){
+
+	if ( empty( $post_id ) )
+		$post_id = get_the_ID();
+
+	$ret = get_post_meta( $post_id, '_hike_location_desc', true );
+
+	return $ret ? $ret : false;
 
 }
 

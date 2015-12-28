@@ -13,10 +13,10 @@
  */
 
 get_header(); ?>
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
 
-		<?php
+	<main id="primary" class="site-main" role="main">
+
+	<?php
 		if ( have_posts() ) :
 
 			/* Start the Loop */
@@ -39,8 +39,7 @@ get_header(); ?>
 
 		endif; ?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+	</main>
 
 <?php
 get_footer();

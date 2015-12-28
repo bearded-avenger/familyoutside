@@ -1,0 +1,20 @@
+.object-summary {
+	background:#FFF;
+	border-top:1px solid $border-color;
+	padding:$padding--sm 0;
+	margin:$padding 0 0;
+	@include clearfix();
+
+	h3 {
+		margin:0 auto $padding--sm;
+	}
+
+	.object-summary--lt {
+		@include make-md-column(3);
+		padding-left:0;
+	}
+	.object-summary--rt {
+		@include make-md-column(9);
+		padding-right:0;
+	}
+}
