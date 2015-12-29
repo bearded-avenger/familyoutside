@@ -1,10 +1,100 @@
 .footer {
-	background:#FFF;
+	color:#FFF;
 	border-top:1px solid $border-color;
+	background-image:url(../img/footerbg.jpg);
+	background-size:cover;
+	background-position:center center;
+	position:relative;
+
+	a {
+		color:$border-color;
+	}
+
+	&:after {
+		content:'';
+		background:transparentize($text-color,0.2);
+		position:absolute;
+		left:0;
+		top:0;
+		height:100%;
+		width:100%;
+	}
 
 	.container {
 		padding-top:$padding;
 		padding-bottom:$padding;
 		@include clearfix();
+		position:relative;
+		z-index:1;
+	}
+
+	.widget {
+		@include make-md-column(4);
+		margin-bottom:$padding--sm;
+
+		&:first-child {
+			padding-left:0;
+		}
+		&:last-child {
+			padding-right:0;
+		}
+
+		p {
+			font-size:$font-size-small;
+		}
+	}
+	.byline {
+		clear:left;
+		color:$border-color;
+		font-size:$font-size-small;
+	}
+
+	.clear {
+		clear:left;
+		padding-top:$padding--sm;
+		margin:0;
+	}
+
+}
+
+.social-links {
+	@include unstyled();
+	@include clearfix();
+	li {
+		float:left;
+		margin-right:5px;
+		a {
+			font-size:$font-size-large;
+		}
+	}
+}
+
+.instagram-pics {
+	@include unstyled();
+	li {
+		float:left;
+		margin-right:5px;
+	}
+
+	img {
+		width:80px;
+	}
+}
+
+#mad_mimi_signup_form {
+	position:relative;
+
+	.mimi_field--input {
+		padding-right:100px;
+	}
+	.mimi_field--submit {
+		position:absolute;
+		top:0;
+		right:0;
+
+		input[type="submit"] {
+			border-top-left-radius:0;
+			border-bottom-left-radius:0;
+		}
 	}
 }
