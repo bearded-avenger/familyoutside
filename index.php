@@ -12,9 +12,12 @@
  * @package Family_Outside
  */
 
-get_header(); ?>
+get_header();
 
-	<main id="primary" class="site-main" role="main">
+	global $wp_query;
+	?>
+
+	<main id="primary" class="site-main" role="main" data-max-pages="<?php echo $wp_query->max_num_pages;?>">
 
 	<?php
 		if ( have_posts() ) :
@@ -30,8 +33,6 @@ get_header(); ?>
 				get_template_part( 'template-parts/content-archive', get_post_format() );
 
 			endwhile;
-
-			the_posts_navigation();
 
 		else :
 
