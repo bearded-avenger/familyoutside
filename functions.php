@@ -40,6 +40,8 @@ class foSetup {
 		require FO_THEME_DIR.'/inc/theme-functions.php';
 		require FO_THEME_DIR.'/inc/hike-functions.php';
 		require FO_THEME_DIR.'/inc/review-functions.php';
+		require FO_THEME_DIR.'/inc/social.php';
+		require FO_THEME_DIR.'/inc/signup.php';
 	}
 
 	/**
@@ -115,6 +117,14 @@ class foSetup {
 		wp_enqueue_style( 'fo-style', FO_THEME_URL.'/assets/css/style.css' );
 
 		wp_enqueue_script( 'fo-scripts', FO_THEME_URL.'/assets/js/scripts.js', array('jquery'), FO_THEME_VERSION, true );
+
+ 		wp_localize_script(
+ 			'fo-scripts',
+ 			'fo_local_vars',
+ 			array(
+ 				'ajaxurl' => admin_url( 'admin-ajax.php' ),
+ 			)
+ 		);
 
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );

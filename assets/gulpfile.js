@@ -21,7 +21,10 @@ gulp.task('styles', function(){
 
 gulp.task('scripts', function() {
   	return gulp.src([
+  				'js/util--transition.js',
+  				'js/util--modal.js',
   				'js/portfolio.pack.min.js',
+  				'js/process.create-account.js',
   				'js/general.js'
   		])
     	.pipe(concat('scripts.js'))

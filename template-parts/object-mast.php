@@ -12,14 +12,19 @@
 
 	<div class="object-mast--header">
 		<div class="container">
-			<?php the_title( '<h2 class="object-mast--title">','</h2>' );?>
-			<?php if ( 'hikes' == get_post_type() ){ ?>
-				<div class="object-mast--location"><?php echo fo_get_hike_location();?></div>
-			<?php } else { ?>
-				<p class="entry--meta">
-					<?php family_outside_posted_on(); ?>
-				</p>
-			<?php } ?>
+			<div class="object-mast--lt">
+				<?php the_title( '<h2 class="object-mast--title">','</h2>' );?>
+				<?php if ( 'hikes' == get_post_type() ){ ?>
+					<div class="object-mast--location"><?php echo fo_get_hike_location();?></div>
+				<?php } else { ?>
+					<p class="entry--meta">
+						<?php family_outside_posted_on(); ?>
+					</p>
+				<?php } ?>
+			</div>
+			<div class="object-mast--rt">
+				<?php echo fo_social_sharing();?>
+			</div>
 		</div>
 	</div>
 

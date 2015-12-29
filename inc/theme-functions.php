@@ -156,7 +156,7 @@ function fo_pagination($wp_query){
 
 	$big = 9999;
 
-	echo '<nav class="cgc-pagination">';
+	echo '<nav class="fo-pagination">';
 
 		echo paginate_links( array(
 			'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
@@ -166,4 +166,26 @@ function fo_pagination($wp_query){
 		) );
 
 	echo '</nav>';
+}
+/**
+*	Draw social sharing buttons - sharing done though js
+*
+*	@param $class 	string 	optional css class to pass through
+*	@param $postid 	int 	the id of the post for bookmarking
+*/
+function fo_social_sharing( $class = '', $post_id = 0 ){
+
+	if ( empty( $post_id ) )
+		$post_id = get_the_ID();
+
+	$feat_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), 'full' );
+
+	?>
+		<ul class="<?php echo sanitize_html_class( $class );?> fo-share--wrap">
+			<li><a href="#" class="fo--bookmark"><i class="fo-icon fo-icon-plus-square"></i></a></li>
+			<li><a href="#" class="fo--share__twitter" title="Share on Twitter" ><i class="fo-icon fo-icon-twitter-square"></i></a></li>
+			<li><a href="http://pinterest.com/pin/create/button/?url=<?php echo urlencode(get_permalink());?>&media=<?php echo $feat_image;?>&description=<?php echo the_title();?>" class="pin-it-button" title="Share on Pinterest" count-layout="horizontal"  onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=350,width=800');return false;" target="_blank" ><i class="fo-icon fo-icon-pinterest"></i></a></li>
+			<li><a href="#" class="fo--share__fb" title="Share on Facebook"><i class="fo-icon fo-icon-facebook-square"></i></a></li>
+		</ul>
+	<?php
 }

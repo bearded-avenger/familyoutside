@@ -43,7 +43,7 @@
 				<span>Families that hike together stay together</span>
 				<ul class="header--actions">
 					<li><a href="#">Login</a></li>
-					<li><a href="#" class="btn btn-primary btn-xs">Signup</a></li>
+					<li><a href="#" data-toggle="modal" data-target="#modal--create-account" class="btn btn-primary btn-xs">Signup</a></li>
 				</ul>
 			</div>
 

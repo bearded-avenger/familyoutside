@@ -18,6 +18,24 @@
 		font-size:$font-size-small;
 		color:$text-muted;
 	}
+
+	.container {
+		@include clearfix();
+	}
+
+	.object-mast--lt {
+		@include make-md-column(9);
+	}
+	.object-mast--rt {
+		@include make-md-column(3);
+
+		.fo-share--wrap {
+			float:right;
+			position:relative;
+			top:$padding;
+		}
+	}
+
 }
 
 .object-mast--media {
@@ -80,5 +98,21 @@
 
 	li {
 		@include make-md-column(3);
+	}
+}
+
+.fo-share--wrap {
+	@include unstyled();
+	@include clearfix();
+
+
+	li {
+		float:left;
+		margin-right:5px;
+
+		a {
+			font-size:$font-size-large;
+			color:$text-muted;
+		}
 	}
 }

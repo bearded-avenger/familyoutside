@@ -32,7 +32,9 @@
 
 </div>
 
-<?php wp_footer(); ?>
+<?php wp_footer();?>
+<script async="" src="//platform.twitter.com/widgets.js"></script>
+<script async="" src="//connect.facebook.net/en_US/all.js"></script>
 
 </body>
 </html>

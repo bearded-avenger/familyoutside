@@ -1,0 +1,23 @@
+.modal--create-account {
+	p {
+		font-size:$font-size-small;
+		color:$text-muted;
+		margin:0;
+	}
+
+	input[type="submit"]{
+		width:100%;
+		margin-bottom:$padding--sm;
+	}
+
+	.modal-header,
+	.modal-footer {
+		text-align:center;
+	}
+}
+
+#fo-form--confirmation {
+	font-size:$font-size-small;
+	margin-bottom:$padding--sm;
+	color:$text-muted;
+}
