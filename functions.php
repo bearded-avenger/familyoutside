@@ -14,6 +14,7 @@ class foSetup {
 		add_action( 'after_setup_theme', 	array($this,'setup'));
 		add_action( 'widgets_init', 		array($this,'widgets_init') );
 		add_action( 'wp_enqueue_scripts', 	array($this,'scripts') );
+				add_action('template_redirect', array($this,'load_posts'));
 
 		$this->includes();
 
@@ -118,6 +119,34 @@ class foSetup {
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}
+	}
+
+
+	public function load_posts() {
+
+	 	global $wp_query;
+
+	 	// Add code to index pages.
+	 	if ( is_front_page() || is_home() || is_archive() || is_search() ) {
+	 		// Queue JS and CSS
+	 		wp_enqueue_script('fo-post-loader',FO_THEME_URL.'/assets/js/load-posts.js',array('jquery'),FO_THEME_VERSION,true);
+
+	 		$paged = ( get_query_var('paged') > 1 ) ? get_query_var('paged') : 1;
+
+	 		$max = '';
+
+	 		// Add some parameters for the JS.
+	 		wp_localize_script(
+	 			'fo-post-loader',
+	 			'pagi_vars',
+	 			array(
+	 				'startPage' => $paged,
+	 				'loadMore' => 'Load More Posts...',
+	 				'loading' => 'Loading Posts...',
+	 				'nextLink' => next_posts($max, false)
+	 			)
+	 		);
+	 	}
 	}
 }
 new foSetup();
