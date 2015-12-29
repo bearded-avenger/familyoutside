@@ -7,22 +7,25 @@ get_header();
 
 	<?php
 
+		$paged = ( get_query_var('page') ) ? get_query_var('page') : 1;
+
 		$args = array(
 			'post_type' 	=> array('hikes', 'reviews', 'post'),
 			'post_status'	=> 'publish',
-			'post__not_in'	=> fo_get_featured_ids()
+			'post__not_in'	=> fo_get_featured_ids(),
+			'paged'			=> $paged
 		);
-		$q = new wp_query( $args );
+		$wp_query = new wp_query( $args );
 
-		if ( $q->have_posts() ) :
+		if ( $wp_query->have_posts() ) :
 
-			while ( $q->have_posts() ) : $q->the_post();
+			while ( $wp_query->have_posts() ) : $wp_query->the_post();
 
 				get_template_part( 'template-parts/content-archive', get_post_format() );
 
 			endwhile;
 
-			the_posts_navigation();
+			fo_pagination( $wp_query );
 
 		endif;
 	?>

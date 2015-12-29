@@ -139,3 +139,31 @@ function fo_draw_object_gallery( $post_id = 0, $size = 'full' ) {
 		}
 	echo '</div>';
 }
+
+/**
+*
+*	A global pagionation function
+*	@since 5.0.4
+*/
+function fo_pagination($wp_query){
+
+	$bignum = 999999999;
+
+	global $wp_query;
+
+	if ( $wp_query->max_num_pages <= 1 )
+		return;
+
+	$big = 9999;
+
+	echo '<nav class="cgc-pagination">';
+
+		echo paginate_links( array(
+			'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+			'format' => '?paged=%#%',
+			'current' => max( 1, get_query_var('paged') ),
+			'total' => $wp_query->max_num_pages
+		) );
+
+	echo '</nav>';
+}
