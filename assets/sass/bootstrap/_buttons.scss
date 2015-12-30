@@ -52,6 +52,11 @@
   }
 
   // [converter] extracted a& to a.btn
+
+  i {
+  	margin-right:5px;
+  	position:relative;
+  }
 }
 
 a.btn {
@@ -151,6 +156,10 @@ a.btn {
 }
 .btn-xs {
   @include button-size($padding-xs-vertical, $padding-xs-horizontal, $font-size-small, $line-height-small, $btn-border-radius-small);
+
+  i {
+  	font-size:14px;
+  }
 }
 
 

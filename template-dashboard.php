@@ -25,11 +25,15 @@ get_header(); ?>
 		    	<?php
 		    		$bookmarks = function_exists('fo_get_users_bookmarks') ? fo_get_users_bookmarks( get_current_user_ID() ) : false; 
 
-					if ( $bookmarks ) {
+					if ( $bookmarks ) { ?>
 
-						echo '<a href="#" id="manage-bookmarks" class="btn btn-primary btn-sm"><i class="fo-icon fo-icon-edit"></i>Edit</a>';
+						<div id="bookmark-controls">
+							<a href="#" id="manage-bookmarks" class="btn btn-primary btn-xs"><i class="fo-icon fo-icon-edit"></i>Edit</a>
+							<a href="#" id="delete-bookmarks" class="btn btn-danger btn-xs">Delete</a>
+							<a href="#" id="cancel-bookmarks" class="hide btn btn-warning btn-xs"><i class="fo-icon fo-icon-close"></i></a>
+						</div>
 
-						echo '<ul class="bookmarks-list">';
+						<?php echo '<ul class="bookmarks-list">';
 
 							foreach ( (array) $bookmarks as $bookmark) {
 
@@ -40,9 +44,11 @@ get_header(); ?>
 
 								<li id="bookmark-<?php echo $id;?>" <?php post_class(array('class' => 'post--archive bookmark')); ?> data-postid="<?php echo absint( $id );?>">
 
-									<div id="bookmark-controls" class="hide">
-										<input type="checkbox" id="delete_bookmark_<?php echo absint( $id );?>" name="delete_bookmark_<?php echo absint( $id );?>">
-										<label for="delete_bookmark_<?php echo absint( $id );?>" class="checkbox-control checkbox"></label>
+									<div class="checkbox">
+										<label class="control checkbox" for="delete_bookmark_<?php echo absint( $id );?>">
+											<input type="checkbox" id="delete_bookmark_<?php echo absint( $id );?>" name="delete_bookmark_<?php echo absint( $id );?>">
+												<span class="control-indicator"></span>
+										</label>
 									</div>
 
 									<div class="post--archive__image">
@@ -53,12 +59,6 @@ get_header(); ?>
 
 									<div class="post--archive__content">
 										<?php the_title( '<h4 class="post--archive__title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h4>' );?>
-										<div class="post--archive__excerpt">
-											<?php echo $post->post_excerpt; ?>
-										</div>
-										<p class="entry--meta">
-											<?php family_outside_posted_on(); ?>
-										</p>
 									</div>
 								</li>
 								<?php
