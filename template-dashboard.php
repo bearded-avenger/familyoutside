@@ -29,7 +29,7 @@ get_header(); ?>
 
 						<div id="bookmark-controls">
 							<a href="#" id="manage-bookmarks" class="btn btn-primary btn-xs"><i class="fo-icon fo-icon-edit"></i>Edit</a>
-							<a href="#" id="delete-bookmarks" class="btn btn-danger btn-xs">Delete</a>
+							<a href="#" id="delete-bookmarks" class="hide btn btn-danger btn-xs">Delete</a>
 							<a href="#" id="cancel-bookmarks" class="hide btn btn-warning btn-xs"><i class="fo-icon fo-icon-close"></i></a>
 						</div>
 
@@ -45,7 +45,7 @@ get_header(); ?>
 								<li id="bookmark-<?php echo $id;?>" <?php post_class(array('class' => 'post--archive bookmark')); ?> data-postid="<?php echo absint( $id );?>">
 
 									<div class="checkbox">
-										<label class="control checkbox" for="delete_bookmark_<?php echo absint( $id );?>">
+										<label class="control" for="delete_bookmark_<?php echo absint( $id );?>">
 											<input type="checkbox" id="delete_bookmark_<?php echo absint( $id );?>" name="delete_bookmark_<?php echo absint( $id );?>">
 												<span class="control-indicator"></span>
 										</label>

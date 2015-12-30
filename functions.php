@@ -43,6 +43,7 @@ class foSetup {
 		require FO_THEME_DIR.'/inc/social.php';
 		require FO_THEME_DIR.'/inc/signup.php';
 		require FO_THEME_DIR.'/inc/fo-login.php';
+		require FO_THEME_DIR.'/inc/process-ajax.php';
 	}
 
 	/**
