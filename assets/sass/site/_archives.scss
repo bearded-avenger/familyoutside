@@ -1,0 +1,26 @@
+.archive-page {
+	.page-title,
+	.page-header {
+		margin-top:0;
+	}
+}
+
+.widget-area--inner {
+	background:#fff;
+	border:1px solid $border-color;
+	border-radius:$border-radius-base;
+	padding:$padding;
+}
+
+.widget-area--ads {
+	margin-top:$padding;
+}
+
+.filter-title {
+	margin:0 0 $padding--sm;
+}
+
+.facetwp-facet {
+	font-size:$font-size-small;
+	color:$text-muted;
+}

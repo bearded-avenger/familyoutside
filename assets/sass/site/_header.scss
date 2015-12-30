@@ -108,5 +108,9 @@
 			font-weight:700;
 			font-size:$font-size-small;
 		}
+
+		.current-menu-item a{
+			color:$brand-primary;
+		}
 	}
 }
