@@ -118,11 +118,17 @@ class foSetup {
 		wp_enqueue_style( 'fo-style', FO_THEME_URL.'/assets/css/style.css' );
 		wp_enqueue_script( 'fo-scripts', FO_THEME_URL.'/assets/js/scripts.js', array('jquery'), FO_THEME_VERSION, true );
 
+		$nonces = array(
+			'bookmark'			=> wp_create_nonce('process_bookmark'),
+			'delete_bookmark' 	=> wp_create_nonce('process_delete_bookmarks')
+		);
+
  		wp_localize_script(
  			'fo-scripts',
  			'fo_local_vars',
  			array(
- 				'ajaxurl' => admin_url( 'admin-ajax.php' ),
+ 				'ajaxurl' 	=> admin_url( 'admin-ajax.php' ),
+ 				'nonces'	=> $nonces
  			)
  		);
 

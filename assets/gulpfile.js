@@ -25,6 +25,7 @@ gulp.task('scripts', function() {
   				'js/util--modal.js',
   				'js/portfolio.pack.min.js',
   				'js/process.create-account.js',
+  				'js/process.bookmark.js',
   				'js/general.js'
   		])
     	.pipe(concat('scripts.js'))

@@ -12,7 +12,7 @@ class foLogin {
 	/**
 	*	Custom login style sheet
 	*
-	*	@since 6.0
+	*	@since 1.0
 	*/
 	function assets(){
 		wp_enqueue_style( 'fo-login', FO_THEME_URL.'/assets/css/login.css' );
@@ -21,7 +21,7 @@ class foLogin {
 	/**
 	*	Link login logo to home
 	*
-	*	@since 6.0
+	*	@since 1.0
 	*/
 	function logo_url(){
 		return site_url();
@@ -30,7 +30,7 @@ class foLogin {
 	/**
 	*	Rename login image title
 	*
-	*	@since 6.0
+	*	@since 1.0
 	*/
 	function logo_url_title(){
 		return 'A Family Outside';
