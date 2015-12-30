@@ -797,21 +797,21 @@
 					$this.removeClass( rem )
 					.addClass( add )
 					.find('.fo-icon')
-					.removeClass('fo-icon-minus-square')
-					.addClass('fo-icon-plus-square')
+					.removeClass('fo-icon-heart')
+					.addClass('fo-icon-heart-o')
 
 				} else {
 
 					$this.addClass( rem )
 					.find('.fo-icon')
-					.removeClass('fo-icon-plus-square')
-					.addClass('fo-icon-minus-square')
+					.removeClass('fo-icon-heart-o')
+					.addClass('fo-icon-heart')
 
 					swal({
-						title: "Bookmark Added!",
+						title: "Added to favorites!",
 						type: "success",
 						html:true,
-						text: 'You can manage all of your bookmarked items by visiting your account dashboard <a href="'+fo_local_vars.dashboard_url+'">here</a>.',
+						text: 'You can manage all of your favorited items by visiting your account dashboard <a href="'+fo_local_vars.dashboard_url+'">here</a>.',
 						showCancelButton: false,
 						confirmButtonColor: "#50AEE2",
 						confirmButtonText: "Got it!"
@@ -854,7 +854,7 @@
 			$this.addClass('btn-spin');
 
 			swal({
-				title: "Delete bookmarks?",
+				title: "Delete favorites?",
 				type: "error",
 				text: false,
 				showCancelButton: true,

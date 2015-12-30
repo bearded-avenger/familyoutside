@@ -14,8 +14,8 @@ get_header(); ?>
 		  	<ul class="nav nav-tabs" role="tablist">
 		    	<li role="presentation" class="active">
 			    	<a href="#bookmarks" aria-controls="bookmarks" role="tab" data-toggle="tab">
-			    		<i class="fo-icon fo-icon-plus-square"></i>
-			    		Bookmarks
+			    		<i class="fo-icon fo-icon-heart"></i>
+			    		Favorites
 			    	</a>
 		    	</li>
 		  	</ul>

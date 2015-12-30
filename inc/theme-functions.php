@@ -185,9 +185,9 @@ function fo_social_sharing( $class = '', $post_id = 0 ){
 
 			<?php if ( is_user_logged_in() ) :
 				if ( function_exists('fo_has_user_bookmarked') && fo_has_user_bookmarked( get_current_user_ID(), $post_id ) ) { ?>
-					<li><a href="#" data-postid="<?php echo absint( $post_id );?>" class="fo-bookmark-it fo-bookmark--unbookmark" title="Delete Bookmark"><i class="fo-icon fo-icon-minus-square"></i></a></li>
+					<li><a href="#" data-postid="<?php echo absint( $post_id );?>" class="fo-bookmark-it fo-bookmark--unbookmark" title="Remove from favorites"><i class="fo-icon fo-icon-heart"></i></a></li>
 				<?php } else { ?>
-					<li><a href="#" data-postid="<?php echo absint( $post_id );?>" class="fo-bookmark-it" title="Bookmark it"><i class="fo-icon fo-icon-plus-square"></i></a></li>
+					<li><a href="#" data-postid="<?php echo absint( $post_id );?>" class="fo-bookmark-it" title="Add to favorites"><i class="fo-icon fo-icon-heart-o"></i></a></li>
 				<?php }
 			endif; ?>
 

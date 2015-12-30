@@ -10,7 +10,6 @@ class foProcessAjax {
 
 		add_action( 'wp_ajax_process_delete_bookmarks', array($this, 'delete_bookmarks' ) );
 
-
 	}
 
 	/**

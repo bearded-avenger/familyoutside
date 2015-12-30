@@ -26,7 +26,7 @@
 			$this.addClass('btn-spin');
 
 			swal({
-				title: "Delete bookmarks?",
+				title: "Delete favorites?",
 				type: "error",
 				text: false,
 				showCancelButton: true,

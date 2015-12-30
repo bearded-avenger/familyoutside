@@ -114,5 +114,24 @@
 			font-size:$font-size-large;
 			color:$text-muted;
 		}
+
 	}
+
+	.fo-icon-twitter-square {
+		color:$color-twitter;
+	}
+	.fo-icon-facebook-square {
+		color:$color-facebook;
+	}
+	.fo-icon-pinterest {
+		color:$color-pinterest;
+	}
+	.fo-icon-instagram {
+		color:$color-instagram;
+	}
+}
+
+.fo-icon-heart,
+.fo-icon-heart-o {
+	color:$brand-danger;
 }

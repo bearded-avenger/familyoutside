@@ -7,6 +7,8 @@ class foLogin {
 		add_action( 'login_enqueue_scripts', 			array(  $this, 'assets' ) );
 		add_filter( 'login_headerurl', 					array(  $this, 'logo_url' ) );
 		add_filter( 'login_headertitle', 				array(  $this, 'logo_url_title' ) );
+		add_filter( 'show_admin_bar', 					array( $this, 'admin_bar_admins_only' ) );
+				add_action('admin_init', 			array($this,'dashboard_redirect'));
 	}
 
 	/**
@@ -36,6 +38,29 @@ class foLogin {
 		return 'A Family Outside';
 	}
 
+	/**
+	*
+	*	Hide admin bar for all but administrators
+	*	@since 1.0
+	*/
+	function admin_bar_admins_only( $content ) {
+	    return ( current_user_can("administrator") ) ? $content : false;
+	}
+
+	/**
+	*
+	*	Redirect any non-administrator to the user dashboard if they visit wp-admin
+	*
+	*	@since 1.0
+	*/
+	function dashboard_redirect(){
+
+		if ( !current_user_can( 'publish_posts' ) || defined('DOING_AJAX') && !DOING_AJAX ) {
+			wp_redirect( site_url() );
+			exit;
+		}
+
+	}
 	/**
 	*
 	*	Return a modal for logging in
