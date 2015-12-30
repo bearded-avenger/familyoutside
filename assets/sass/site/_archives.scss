@@ -20,7 +20,8 @@
 	margin:0 0 $padding--sm;
 }
 
-.facetwp-facet {
+body .facetwp-facet {
 	font-size:$font-size-small;
 	color:$text-muted;
+	margin-bottom:$padding;
 }

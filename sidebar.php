@@ -13,26 +13,25 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 ?>
 
 <aside id="secondary" class="widget-area" role="complementary">
-	<div class="widget-area--inner">
-		<?php
 
-		if ( is_archive() && class_exists('FacetWP') ):
+	<?php if ( is_archive() && class_exists('FacetWP') ): ?>
+		<div class="widget-area--inner">
+			<?php
 
-			if ( 'hikes' == get_post_type() ) {
+				if ( 'hikes' == get_post_type() ) {
 
-				echo '<h5 class="filter-title">Hike Difficulty</h5>';
-				echo facetwp_display( 'facet', 'difficulty' );
+					echo '<h5 class="filter-title">Hike Difficulty</h5>';
+					echo facetwp_display( 'facet', 'difficulty' );
 
-				echo '<h5 class="filter-title">Hike Rating</h5>';
-				echo facetwp_display( 'facet', 'hike_rating' );
+					echo '<h5 class="filter-title">Hike Rating</h5>';
+					echo facetwp_display( 'facet', 'hike_rating' );
 
-			} elseif ( 'product-review' == get_post_type() ) {
+				} elseif ( 'product-review' == get_post_type() ) {
 
-			}
-
-		endif; ?>
-
-	</div>
+				}
+			?>
+		</div>
+	<?php endif; ?>
 	<div class="widget-area--ads">
 		<?php dynamic_sidebar( 'sidebar-1' ); ?>
 	</div>
