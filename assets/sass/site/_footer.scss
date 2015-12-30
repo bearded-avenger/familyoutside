@@ -97,4 +97,22 @@
 			border-bottom-left-radius:0;
 		}
 	}
+
+	&.mimi_submitting {
+		margin-top: -93px;
+	    background: $body-bg;
+	    color: $text-muted;
+	    padding: $padding;
+	    border-radius:$border-radius-base;
+
+	    h2 {
+	    	margin:0 auto $padding--sm;
+	    	font-size:$font-size-h4;
+	    }
+
+	    p:last-of-type {
+			margin-top:-25px;
+			margin-bottom:0;
+		}
+	}
 }

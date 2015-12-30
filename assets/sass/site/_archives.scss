@@ -24,4 +24,8 @@ body .facetwp-facet {
 	font-size:$font-size-small;
 	color:$text-muted;
 	margin-bottom:$padding;
+
+	&:last-of-type {
+		margin-bottom:0;
+	}
 }

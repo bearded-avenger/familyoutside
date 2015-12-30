@@ -26,8 +26,9 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 					echo '<h5 class="filter-title">Hike Rating</h5>';
 					echo facetwp_display( 'facet', 'hike_rating' );
 
-				} elseif ( 'product-review' == get_post_type() ) {
-
+				} elseif ( 'reviews' == get_post_type() ) {
+					echo '<h5 class="filter-title">Product Rating</h5>';
+					echo facetwp_display( 'facet', 'product_rating' );
 				}
 			?>
 		</div>
