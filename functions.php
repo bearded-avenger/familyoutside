@@ -10,6 +10,7 @@ class foSetup {
 		define('FO_THEME_DIR', 				get_template_directory());
 		define('FO_THEME_URL', 				get_template_directory_uri());
 
+		add_action('init', 			array($this,'dashboard_redirect'));
 		add_action('wp_head',				array($this,'typekit'));
 		add_action( 'after_setup_theme', 	array($this,'setup'));
 		add_action( 'widgets_init', 		array($this,'widgets_init') );
@@ -19,7 +20,22 @@ class foSetup {
 		$this->includes();
 
 	}
+	/**
+	*
+	*	Redirect any non-administrator to the user dashboard if they visit wp-admin
+	*
+	*	@since 1.0
+	*/
+	function dashboard_redirect(){
 
+	  	if ( !current_user_can( 'manage_options' ) && $_SERVER['PHP_SELF'] != '/wp-admin/admin-ajax.php') {
+		    if ( is_admin() ) {
+		        wp_redirect( home_url() );
+		        exit;
+		    }
+		}
+
+	}
 	/**
 	*	File includes
 	*
