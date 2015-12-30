@@ -54,7 +54,7 @@ get_header(); ?>
 									<div class="post--archive__content">
 										<?php the_title( '<h4 class="post--archive__title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h4>' );?>
 										<div class="post--archive__excerpt">
-											<?php the_excerpt(); ?>
+											<?php echo $post->post_excerpt; ?>
 										</div>
 										<p class="entry--meta">
 											<?php family_outside_posted_on(); ?>

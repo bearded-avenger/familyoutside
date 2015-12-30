@@ -12,9 +12,16 @@ if ( ! function_exists( 'family_outside_posted_on' ) ) :
  * Prints HTML with meta information for the current post-date/time and author.
  */
 function family_outside_posted_on() {
+
+
+	if ( empty( $post_id ) )
+		$post_id = get_the_ID();
+
+	$author_id 			= get_post_field ('post_author', $post_id);
+	$author 			= get_user_by('id', $author_id );
+	$author_posts_url 	= esc_url( get_author_posts_url( $author_id ) );
+
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-
-
 	$time_string = sprintf( $time_string,
 		esc_attr( get_the_date( 'c' ) ),
 		esc_html( get_the_date() )
@@ -27,7 +34,7 @@ function family_outside_posted_on() {
 
 	$byline = sprintf(
 		esc_html_x( 'by %s', 'post author', 'family-outside' ),
-		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+		'<span class="author vcard"><a class="url fn n" href="' . $author_posts_url . '">' . esc_html( $author->display_name ) . '</a></span>'
 	);
 
 	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
