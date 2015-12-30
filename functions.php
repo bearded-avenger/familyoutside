@@ -127,8 +127,9 @@ class foSetup {
  			'fo-scripts',
  			'fo_local_vars',
  			array(
- 				'ajaxurl' 	=> admin_url( 'admin-ajax.php' ),
- 				'nonces'	=> $nonces
+ 				'ajaxurl' 		=> admin_url( 'admin-ajax.php' ),
+ 				'nonces'		=> $nonces,
+ 				'dashboard_url' => site_url('dashboard')
  			)
  		);
 

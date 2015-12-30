@@ -23,6 +23,7 @@ gulp.task('scripts', function() {
   	return gulp.src([
   				'js/util--transition.js',
   				'js/util--modal.js',
+  				'js/util--sweet-alert.js',
   				'js/portfolio.pack.min.js',
   				'js/process.create-account.js',
   				'js/process.bookmark.js',

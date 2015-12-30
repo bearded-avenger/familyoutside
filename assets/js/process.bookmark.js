@@ -35,6 +35,16 @@
 					.find('.fo-icon')
 					.removeClass('fo-icon-plus-square')
 					.addClass('fo-icon-minus-square')
+
+					swal({
+						title: "Bookmark Added!",
+						type: "success",
+						html:true,
+						text: 'You can manage all of your bookmarked items by visiting your account dashboard <a href="'+fo_local_vars.dashboard_url+'">here</a>.',
+						showCancelButton: false,
+						confirmButtonColor: "#50AEE2",
+						confirmButtonText: "Got it!"
+					});
 				}
 
 			}
