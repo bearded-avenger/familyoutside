@@ -1,3 +1,16 @@
+// Dashboard
+.tab-pane {
+	background:white;
+	padding:$padding;
+	border-left:1px solid $border-color;
+	border-right:1px solid $border-color;
+	border-bottom:1px solid $border-color;
+	border-bottom-left-radius:$border-radius-base;
+	border-bottom-right-radius:$border-radius-base;
+}
+
+
+// Login Modal
 .modal--create-account {
 	p {
 		font-size:$font-size-small;

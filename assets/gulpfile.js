@@ -24,6 +24,7 @@ gulp.task('scripts', function() {
   				'js/util--transition.js',
   				'js/util--modal.js',
   				'js/util--sweet-alert.js',
+  				'js/util--tab.js',
   				'js/portfolio.pack.min.js',
   				'js/process.create-account.js',
   				'js/process.bookmark.js',

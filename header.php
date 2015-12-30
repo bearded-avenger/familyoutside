@@ -42,8 +42,13 @@
 			<div class="header--branding__secondary">
 				<span>Families that hike together stay together</span>
 				<ul class="header--actions">
-					<li><a href="#" data-toggle="modal" data-target="#modal--login">Login</a></li>
-					<li><a href="#" data-toggle="modal" data-target="#modal--create-account" class="btn btn-primary btn-xs">Signup</a></li>
+					<?php if ( is_user_logged_in() ){ ?>
+						<li><a href="<?php echo wp_logout_url( get_permalink() );?>">Logout</a></li>
+						<li><a href="<?php echo site_url('dashboard');?>" class="btn btn-primary btn-xs">Dashboard</a></li>
+					<?php } else { ?>
+						<li><a href="#" data-toggle="modal" data-target="#modal--login">Login</a></li>
+						<li><a href="#" data-toggle="modal" data-target="#modal--create-account" class="btn btn-primary btn-xs">Signup</a></li>
+					<?php } ?>
 				</ul>
 			</div>
 
