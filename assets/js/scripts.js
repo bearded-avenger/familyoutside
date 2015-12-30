@@ -622,6 +622,12 @@
 			});
 	        gallery.init();
 	    }
+
+		// modify wp login form
+		$('#loginform').find('#user_login').attr('placeholder','username')
+		$('#loginform').find('#user_pass').attr('placeholder','password')
+
 	});
+
 
 })( jQuery );

@@ -56,7 +56,9 @@ a {
     text-decoration: $link-hover-decoration;
   }
   &:focus {
-    @include tab-focus;
+    //@include tab-focus;
+    outline:none;
+    box-shadow:none;
   }
 }
 

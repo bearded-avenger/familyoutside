@@ -21,3 +21,36 @@
 	margin-bottom:$padding--sm;
 	color:$text-muted;
 }
+
+// Login Form
+#loginform {
+	.login-username label,
+	.login-password label {
+		display:none;
+	}
+
+	.login-remember label{
+		font-weight:normal;
+		font-size:$font-size-small;
+		color:$text-muted;
+	}
+
+}
+#modal--login {
+	.modal-header {
+		text-align:center;
+	}
+	.modal-footer {
+		text-align:center;
+		font-size:$font-size-small;
+		color:$text-muted;
+
+		p {
+			margin:0 auto;
+		}
+	}
+	input[type="submit"]{
+		width:100%;
+		margin-bottom:0;
+	}
+}

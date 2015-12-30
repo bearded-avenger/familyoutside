@@ -10,7 +10,7 @@ class foSignup {
 	/**
 	*
 	*	Return the form used within the modal for creating a user
-	*	
+	*
 	*	@since 1.0
 	*/
 	function draw_modal(){

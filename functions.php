@@ -14,7 +14,7 @@ class foSetup {
 		add_action( 'after_setup_theme', 	array($this,'setup'));
 		add_action( 'widgets_init', 		array($this,'widgets_init') );
 		add_action( 'wp_enqueue_scripts', 	array($this,'scripts') );
-				add_action('template_redirect', array($this,'load_posts'));
+		add_action('template_redirect', 	array($this,'load_posts'));
 
 		$this->includes();
 
@@ -42,6 +42,7 @@ class foSetup {
 		require FO_THEME_DIR.'/inc/review-functions.php';
 		require FO_THEME_DIR.'/inc/social.php';
 		require FO_THEME_DIR.'/inc/signup.php';
+		require FO_THEME_DIR.'/inc/fo-login.php';
 	}
 
 	/**
@@ -115,7 +116,6 @@ class foSetup {
 	function scripts() {
 
 		wp_enqueue_style( 'fo-style', FO_THEME_URL.'/assets/css/style.css' );
-
 		wp_enqueue_script( 'fo-scripts', FO_THEME_URL.'/assets/js/scripts.js', array('jquery'), FO_THEME_VERSION, true );
 
  		wp_localize_script(
