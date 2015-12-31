@@ -1,10 +1,10 @@
 <?php
 
 /**
-*	Class used to hold processing functionality for various ajax calls
+*	Class used to hold processing functionality for favoriting
 *	@since 1.0
 */
-class foProcessAjax {
+class foProcessFavorites {
 
 	public function __construct(){
 
@@ -83,4 +83,4 @@ class foProcessAjax {
 	}
 }
 
-new foProcessAjax;
+new foProcessFavorites;
