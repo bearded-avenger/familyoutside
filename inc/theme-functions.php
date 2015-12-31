@@ -235,3 +235,21 @@ function fo_return_type_data( $post_id = 0 ){
 	return is_array( $out ) ? $out : false;
 
 }
+
+/**
+*	Determines if a user has completed teh user info
+*
+*	@param $user_id int id of the user
+*	@since 1.0
+*	@return bool
+*/
+function fo_user_info_completed( $user_id = 0 ) {
+
+	if ( empty( $user_id ) )
+		$user_id = get_current_user_ID();
+
+	$status = get_user_meta( $user_id, 'user_info_completed', true );
+
+	return $status ? true : false;
+
+}

@@ -938,6 +938,7 @@
 
 		$.post( vars.ajaxurl, data, function(response) {
 
+			console.log(response)
 			if ( true == response.success ) {
 
 				submit.val('Saved!').addClass('saved');

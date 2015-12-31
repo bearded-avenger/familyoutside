@@ -33,7 +33,23 @@ class foProcessUserInfo {
 
 			if ( $_POST['action'] == 'process_user_info' ) {
 
-				do_action('user_info_updated', $user_id );
+				$gender 	= isset( $_POST['gender'] ) ? sanitize_text_field( $_POST['gender'] ) : false;
+				$age 		= isset( $_POST['age'] ) ? sanitize_text_field( $_POST['age'] ) : false;
+				$education 	= isset( $_POST['education'] ) ? sanitize_text_field( $_POST['education'] ) : false;
+				$employment = isset( $_POST['employment'] ) ? sanitize_text_field( $_POST['employment'] ) : false;
+
+				$data = array(
+					'gender' 		=> $gender,
+					'age'			=> $age,
+					'education'		=> $education,
+					'employment'	=> $employment
+				);
+
+				update_user_meta( $user_id, 'user_info', $data );
+
+				update_user_meta( $user_id, 'user_info_completed', 1 );
+
+				do_action('user_info_updated', $user_id, $data );
 
 		        wp_send_json_success();
 
@@ -111,14 +127,14 @@ class foProcessUserInfo {
 				<div class="radio">
 					<label class="control" for="gender-male">
 						Male
-						<input type="radio" id="gender-male" name="gender[]" value="male">
+						<input type="radio" id="gender-male" name="gender" value="male">
 						<span class="control-indicator"></span>
 					</label>
 				</div>
 				<div class="radio">
 					<label class="control" for="gender-female">
 						Female
-						<input type="radio" id="gender-female" name="gender[]" value="female">
+						<input type="radio" id="gender-female" name="gender" value="female">
 						<span class="control-indicator"></span>
 					</label>
 				</div>
@@ -145,16 +161,16 @@ class foProcessUserInfo {
 		    	<label>Level of schooling</label>
 		           	<div class="select">
 			    		<select name="education" id="education">
-			    			<option value="under-12">No schooling completed</option>
-			    			<option value="12-17">Some high school, no diploma</option>
-			    			<option value="18-24">High school graduate</option>
-			    			<option value="25-34">Some college</option>
-			    			<option value="35-44">Trade/technical/vocational training</option>
-			    			<option value="45-54">Associate degree</option>
-			    			<option value="55-64">Bachelor’s degree</option>
-			    			<option value="65-74">Master’s degree</option>
-			    			<option value="older-75">Professional degree</option>
-			    			<option value="older-75">Doctorate degree</option>
+			    			<option value="no-school">No schooling completed</option>
+			    			<option value="some-high-school">Some high school</option>
+			    			<option value="high-school-graduate">High school graduate</option>
+			    			<option value="some-college">Some college</option>
+			    			<option value="trade-school">Trade/technical/vocational training</option>
+			    			<option value="associates-degree">Associate degree</option>
+			    			<option value="bachelors-degree">Bachelor’s degree</option>
+			    			<option value="masters-degree">Master’s degree</option>
+			    			<option value="professional-degree">Professional degree</option>
+			    			<option value="doctorate-degree">Doctorate degree</option>
 			    		</select>
 			    	</div>
 		    </div>
@@ -162,15 +178,15 @@ class foProcessUserInfo {
 		    <div class="form-group">
 		    	<label>Professional or Employment Status</label>
 		           	<div class="select">
-			    		<select name="education" id="education">
-			    			<option value="under-12">Employed for wages</option>
-			    			<option value="12-17">Self-employed</option>
-			    			<option value="18-24">Out of work</option>
-			    			<option value="25-34">A homemaker</option>
-			    			<option value="35-44">A student</option>
-			    			<option value="45-54">Military</option>
-			    			<option value="55-64">Retired</option>
-			    			<option value="65-74">Unable to work</option>
+			    		<select name="employment" id="employment">
+			    			<option value="employed">Employed for wages</option>
+			    			<option value="self-employed">Self-employed</option>
+			    			<option value="out-of-work">Out of work</option>
+			    			<option value="homemaker">A homemaker</option>
+			    			<option value="student">A student</option>
+			    			<option value="military">Military</option>
+			    			<option value="retired">Retired</option>
+			    			<option value="unable-to-work">Unable to work</option>
 			    		</select>
 			    	</div>
 		    </div>

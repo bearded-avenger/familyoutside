@@ -32,6 +32,7 @@ body.stop-scrolling {
   width: $width;
   padding: $padding;
   border-radius: 5px;
+      border: 1px solid transparent;
   text-align: center;
 
   position: fixed;
@@ -39,6 +40,8 @@ body.stop-scrolling {
   top: 50%;
   margin-left: -($width/2 + $padding);
   margin-top: -200px;
+  -webkit-box-shadow: 0 5px 15px rgba(0,0,0,.5);
+  box-shadow: 0 5px 15px rgba(0,0,0,.5);
 
   overflow: hidden;
   display: none;
