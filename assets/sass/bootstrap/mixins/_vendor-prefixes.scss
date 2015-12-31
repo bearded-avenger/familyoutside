@@ -231,3 +231,21 @@
   #{$property}: -webkit-calc(#{$expression}); 
   #{$property}: calc(#{$expression}); 
 }
+
+
+// waiting icon in a button
+@mixin btn-spin($color) {
+	position:relative;
+	@include transition(opacity .25s ease);
+	padding:0 20px 0 35px;
+	color:$color;
+
+	&:before {
+		font-family:FontAwesome;
+		position:absolute;
+		left:12px;
+		content:'\f110';
+		@extend .fo-icon-spin;
+	}
+
+}

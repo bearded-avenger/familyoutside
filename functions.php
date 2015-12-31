@@ -175,8 +175,8 @@ class foSetup {
 	 			'pagi_vars',
 	 			array(
 	 				'startPage' => $paged,
-	 				'loadMore' => 'Load More Posts...',
-	 				'loading' => 'Loading Posts...',
+	 				'loadMore' => 'Load More Posts',
+	 				'loading' => 'Loading...',
 	 				'nextLink' => next_posts($max, false)
 	 			)
 	 		);

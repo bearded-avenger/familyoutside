@@ -63,3 +63,13 @@ a.label {
 .label-danger {
   @include label-variant($label-danger-bg);
 }
+
+.label-hike {
+  	@include label-variant($color-hike);
+}
+.label-review {
+  	@include label-variant($color-review);
+}
+.label-news {
+	@include label-variant($color-news);
+}

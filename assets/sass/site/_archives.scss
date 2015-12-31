@@ -29,3 +29,22 @@ body .facetwp-facet {
 		margin-bottom:0;
 	}
 }
+
+// Load More Posts
+.fo-load-more-posts {
+	padding-bottom:$padding;
+	border-bottom:1px solid $border-color;
+	text-align:center;
+	text-transform:uppercase;
+	font-size:$font-size-small;
+
+	a {
+		color:$text-muted;
+
+		&:focus,
+		&:hover {
+			text-decoration:none;
+			color:$brand-primary;
+		}
+	}
+}

@@ -197,3 +197,41 @@ function fo_social_sharing( $class = '', $post_id = 0 ){
 		</ul>
 	<?php
 }
+
+/**
+*	Return a human readable text for a specific post type
+*
+*	@param $post_id int id of the post
+*	@since 1.0
+*	@return array
+*/
+function fo_return_type_data( $post_id = 0 ){
+
+	if ( empty( $post_id ) )
+		$post_id = get_the_ID();
+
+	$type = get_post_type( $post_id );
+
+	switch ( $type ) {
+		case 'hikes':
+			$label = 'Hike';
+			$class = 'label-hike';
+			break;
+		case 'revies':
+			$label = 'Review';
+			$class = 'label-review';
+			break;
+		case 'post':
+			$label = 'News';
+			$class = 'label-news';
+			break;
+	}
+
+	$out = array(
+		'label' => $label,
+		'class' => $class
+	);
+
+	return is_array( $out ) ? $out : false;
+
+}

@@ -184,3 +184,12 @@ input[type="button"] {
     width: 100%;
   }
 }
+
+// waiting icon in a button
+.btn-spin {
+	@include btn-spin($text-muted);
+
+	&.btn-spin--light {
+		@include btn-spin(white);
+	}
+}
