@@ -76,20 +76,10 @@
 
 // Login Modal
 .modal--create-account {
-	p {
-		font-size:$font-size-small;
-		color:$text-muted;
-		margin:0;
-	}
 
 	input[type="submit"]{
 		width:100%;
 		margin-bottom:$padding--sm;
-	}
-
-	.modal-header,
-	.modal-footer {
-		text-align:center;
 	}
 }
 
@@ -113,7 +103,15 @@
 	}
 
 }
-#modal--login {
+
+.modal--centered {
+
+	p {
+		font-size:$font-size-small;
+		color:$text-muted;
+		margin:0;
+	}
+
 	.modal-header {
 		text-align:center;
 	}

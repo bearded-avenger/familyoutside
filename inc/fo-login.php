@@ -57,7 +57,7 @@ class foLogin {
 
 		if ( !is_user_logged_in() ): ?>
 
-		<div class="modal fade modal--login" id="modal--login" tabindex="-1" role="dialog">
+		<div class="modal fade modal--login modal--centered" id="modal--login" tabindex="-1" role="dialog">
 		    <div class="modal-dialog modal-sm">
 			  	<div class="modal-content">
 			  		<div class="modal-header">

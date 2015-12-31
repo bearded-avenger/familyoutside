@@ -78,7 +78,7 @@ class foProcessUserInfo {
 
 		if ( is_user_logged_in() && is_page('dashboard') ): ?>
 
-		<div class="modal fade modal--user-info" id="modal--user-info" tabindex="-1" role="dialog">
+		<div class="modal fade modal--user-info modal--centered" id="modal--user-info" tabindex="-1" role="dialog">
 		    <div class="modal-dialog modal-sm">
 			  	<div class="modal-content">
 			  		<div class="modal-header">
@@ -125,7 +125,7 @@ class foProcessUserInfo {
 		    </div>
 
 		    <div class="form-group">
-		    	<label>What is your age?</label>
+		    	<label>Age</label>
 		    	<div class="select">
 		    		<select name="age" id="age">
 		    			<option value="under-12">Under 12</option>
@@ -142,8 +142,37 @@ class foProcessUserInfo {
 		    </div>
 
 		    <div class="form-group">
-		    	<label>What is your occupation?</label>
-		        <input class="form-control" required id="occupation" type="text" name="occupation" value="" placeholder="Occupation"/>
+		    	<label>Level of schooling</label>
+		           	<div class="select">
+			    		<select name="education" id="education">
+			    			<option value="under-12">No schooling completed</option>
+			    			<option value="12-17">Some high school, no diploma</option>
+			    			<option value="18-24">High school graduate</option>
+			    			<option value="25-34">Some college</option>
+			    			<option value="35-44">Trade/technical/vocational training</option>
+			    			<option value="45-54">Associate degree</option>
+			    			<option value="55-64">Bachelor’s degree</option>
+			    			<option value="65-74">Master’s degree</option>
+			    			<option value="older-75">Professional degree</option>
+			    			<option value="older-75">Doctorate degree</option>
+			    		</select>
+			    	</div>
+		    </div>
+
+		    <div class="form-group">
+		    	<label>Professional or Employment Status</label>
+		           	<div class="select">
+			    		<select name="education" id="education">
+			    			<option value="under-12">Employed for wages</option>
+			    			<option value="12-17">Self-employed</option>
+			    			<option value="18-24">Out of work</option>
+			    			<option value="25-34">A homemaker</option>
+			    			<option value="35-44">A student</option>
+			    			<option value="45-54">Military</option>
+			    			<option value="55-64">Retired</option>
+			    			<option value="65-74">Unable to work</option>
+			    		</select>
+			    	</div>
 		    </div>
 
 		    <div class="form--bottom">

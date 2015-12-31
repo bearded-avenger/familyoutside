@@ -17,7 +17,7 @@ class foSignup {
 
 		if ( !is_user_logged_in() ): ?>
 
-		<div class="modal fade modal--create-account" id="modal--create-account" tabindex="-1" role="dialog">
+		<div class="modal fade modal--create-account modal--centered" id="modal--create-account" tabindex="-1" role="dialog">
 		    <div class="modal-dialog modal-sm">
 			  	<div class="modal-content">
 			  		<div class="modal-header">
