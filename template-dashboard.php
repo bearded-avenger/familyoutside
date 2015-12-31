@@ -15,7 +15,7 @@ get_header(); ?>
 				?>
 			</header>
 
-			<div class="alert alert-info">
+			<div class="alert alert-info alert--user-info">
 				Let us know a little more about yourself. This will help us identify what type of folks are using our site. It will only take 30 seconds!
 				<a href="#" data-toggle="modal" data-target="#modal--user-info">Let's do it!</a>
 			</div>

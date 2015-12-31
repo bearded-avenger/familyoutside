@@ -26,14 +26,12 @@ class foProcessUserInfo {
 			if( !is_user_logged_in() )
 				return;
 
-			if ( ! wp_verify_nonce( $_POST['nonce'], 'process_user_info' ) )
+			if ( ! wp_verify_nonce( $_POST['nonce'], 'process-user-info' ) )
 				return;
 
 			$user_id = get_current_user_id();
 
 			if ( $_POST['action'] == 'process_user_info' ) {
-
-
 
 				do_action('user_info_updated', $user_id );
 
@@ -149,8 +147,8 @@ class foProcessUserInfo {
 		    </div>
 
 		    <div class="form--bottom">
-		    	<input type="hidden" name="action" value="user_info">
-		    	<input type="hidden" name="nonce" value="<?php echo wp_create_nonce('user-info');?>"/>
+		    	<input type="hidden" name="action" value="process_user_info">
+		    	<input type="hidden" name="nonce" value="<?php echo wp_create_nonce('process-user-info');?>"/>
 		    	<input type="submit" value="Save" class="btn btn-primary">
 			</div>
 		</form><?php

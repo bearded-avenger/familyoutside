@@ -29,6 +29,7 @@ gulp.task('scripts', function() {
   				'js/process.create-account.js',
   				'js/process.bookmark.js',
   				'js/manage-bookmarks.js',
+  				'js/process.user-info.js',
   				'js/general.js'
   		])
     	.pipe(concat('scripts.js'))
