@@ -91,6 +91,15 @@
 
 @media( max-width: 767px ) {
 
+	.post-type-archive-hikes,
+	.post-type-archive-reviews {
+
+		#content {
+			width:100%;
+		}
+
+	}
+
 	#masthead {
 
 		text-align:center;
