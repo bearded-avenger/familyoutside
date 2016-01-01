@@ -97,7 +97,7 @@
 .object-mast--meta__reviews {
 
 	li {
-		@include make-md-column(3);
+		@include make-sm-column(3);
 	}
 }
 

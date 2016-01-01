@@ -52,11 +52,11 @@
 		top:2px;
 		right:$padding;
 		text-align:right;
-		@include make-md-column(8);
+		@include make-sm-column(8);
 	}
 	.header--actions {
 		@include unstyled();
-		@include make-md-column(4);
+		@include make-sm-column(4);
 		text-align:center;
 
 		li {

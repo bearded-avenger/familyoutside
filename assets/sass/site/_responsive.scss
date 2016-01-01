@@ -1,0 +1,224 @@
+@media( max-width: 1199px ) {
+
+	.header--branding__secondary .header--actions {
+		padding:0;
+		text-align:right;
+	}
+
+}
+
+@media( max-width: 991px ) {
+
+	.header--branding__secondary {
+		top:0;
+		@include clearfix();
+
+		.header--actions:before {
+			content:none;
+		}
+
+		span {
+			text-align:left;
+			padding-left:0;
+		}
+	}
+
+	#secondary {
+		padding-left:0;
+	}
+
+	.footer .widget {
+		padding-left:0;
+		padding-right:0;
+	}
+
+	.featured-posts--top {
+		height:200px;
+	}
+
+	.post-type-archive-hikes,
+	.post-type-archive-reviews {
+
+		#content {
+			display:table;
+		}
+
+		#primary {
+			display:table-footer-group;
+			float: none;
+			padding-right:0;
+		}
+
+		#secondary{
+			display:block;
+			float: none;
+			margin-bottom:$padding;
+		}
+	}
+
+	.object-mast--header {
+
+		.object-mast--lt,
+		.object-mast--rt{
+			padding:0;
+		}
+
+		.object-mast--lt {
+			margin-bottom:5px;
+		}
+
+		.object-mast--rt .fo-share--wrap {
+			float:none;
+			top:0;
+		}
+	}
+
+	.object-mast--meta__hikes li {
+		width:33%;
+	}
+
+	.object-summary .object-summary--rt {
+		padding:0;
+	}
+
+	.object-mast--meta__reviews li {
+		width:50%;
+		padding-left:0;
+	}
+
+}
+
+
+@media( max-width: 767px ) {
+
+	#masthead {
+
+		text-align:center;
+
+		.header--branding,
+		.header--branding__secondary {
+			padding-left:0;
+			padding-right:0;
+
+			span {
+				padding:0;
+			}
+		}
+		.header--branding__secondary {
+			padding-bottom:0;
+			.header--actions {
+				text-align:center;
+				margin:$padding 0;
+			}
+
+			span {
+				right:0;
+				display:block;
+				text-align:center;
+			}
+		}
+
+	}
+
+	#primary-menu {
+		text-align:center;
+
+		li {
+			float:none;
+			display:inline-block;
+		}
+	}
+}
+
+@media( max-width: 400px ) {
+
+	body {
+
+		font-size:16px;
+		line-height:1.2;
+
+		.header--title {
+			img {
+				max-width:45px;
+			}
+			span {
+				top:-4px;
+				position:relative;
+				font-size:24px;
+			}
+		}
+
+		#masthead .header--branding__secondary {
+			padding-top:0;
+
+			span {
+				font-size:14px;
+			}
+
+			.header--actions {
+
+				li a {
+					font-size:14px;
+				}
+			}
+		}
+
+		.footer .byline,
+		.facetwp-facet,
+		.post--archive .entry--meta,
+		.footer .widget p,
+		.object-mast--meta ul li,
+		.object-mast--header .entry--meta,
+		.header--navigation ul a {
+			font-size:14px;
+		}
+
+		.fo-share--wrap li a {
+			font-size:18px;
+		}
+
+		.h2, h2 {
+			font-size:$font-size-h2 - 4;
+		}
+
+		.h3, h3 {
+			font-size:$font-size-h3 - 2;
+		}
+
+		.h4, h4 {
+			font-size:$font-size-h4 - 2;
+		}
+
+		.post--archive .post--archive__image {
+			width:75px;
+			margin-right:$padding--sm;
+
+			img {
+				width:100%;
+				max-width:75px;
+				height:auto;
+			}
+		}
+
+		.object-mast--meta li {
+			float:none;
+			width:100%;
+			display:block;
+			margin-bottom:5px;
+
+			&:last-child {
+				margin-bottom:0;
+			}
+		}
+
+		.object-summary .object-summary--lt {
+			padding:0;
+			margin-bottom:$padding--sm;
+		}
+
+		.featured-posts--item {
+			height:160px;
+		}
+
+	}
+}
