@@ -49,6 +49,7 @@ class foSetup {
 			require FO_THEME_DIR.'/inc/post-meta.php';
 		}
 
+		require FO_THEME_DIR.'/inc/segment-tracking.php';
 		require FO_THEME_DIR.'/inc/template-tags.php';
 		require FO_THEME_DIR.'/inc/jetpack.php';
 		require FO_THEME_DIR.'/inc/options.php';
