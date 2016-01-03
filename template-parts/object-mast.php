@@ -41,7 +41,7 @@
 					</li>
 					<li>
 						<span>Time:</span>
-						<span><?php echo fo_get_hike_time();?></span>
+						<span><?php echo fo_calculate_total_time( fo_get_hike_time() );?></span>
 					</li>
 					<li>
 						<span>Ages:</span>

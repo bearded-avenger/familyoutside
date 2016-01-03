@@ -253,3 +253,24 @@ function fo_user_info_completed( $user_id = 0 ) {
 	return $status ? true : false;
 
 }
+
+
+/**
+*
+*	Calculate hours based on total minutes
+*
+*	@param $minutes int time in minutes
+*	@since 6.2
+*/
+function fo_calculate_total_time( $minutes = 0 ) {
+
+	if ( empty ( $minutes ) )
+		return;
+
+	$hours 			= floor( $minutes / 60 );
+	$hours			= $hours > 0 ? sprintf('%shrs ', $hours) : false;
+	$minutes 		= $minutes % 60;
+	$minutes 		= $minutes > 0 ? sprintf('%smin', $minutes) : false;
+
+	return sprintf('%s%s', $hours, $minutes);
+}
