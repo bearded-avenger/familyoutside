@@ -49,3 +49,18 @@ body .facetwp-facet {
 		}
 	}
 }
+
+.facetwp-pager {
+	font-size:$font-size-small;
+
+	.facetwp-pager-label {
+		position:relative;
+		top:1px;
+	}
+
+	.facetwp-page {
+		@extend .btn;
+		@extend .btn-default;
+		@extend .btn-xs;
+	}
+}

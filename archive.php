@@ -35,7 +35,14 @@ get_header(); ?>
 
 			endwhile;
 
-			the_posts_navigation();
+			if ( ( 'hikes' == get_post_type() || 'reviews' == get_post_type() ) && class_exists('FacetWP') ) {
+
+				echo facetwp_display( 'pager' );
+
+			} else {
+
+				the_posts_navigation();
+			}
 
 		else :
 

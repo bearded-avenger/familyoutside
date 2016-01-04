@@ -25,7 +25,7 @@
 				dynamic_sidebar( 'sidebar-2' );
 			} ?>
 			<div class="byline">
-				C 2016 A Family Outside
+				© 2016 A Family Outside
 			</div>
 		</div>
 	</footer>
