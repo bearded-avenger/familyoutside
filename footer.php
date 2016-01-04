@@ -35,6 +35,9 @@
 <?php wp_footer();?>
 <script async="" src="//platform.twitter.com/widgets.js"></script>
 <script async="" src="//connect.facebook.net/en_US/all.js"></script>
+<?php if ( 'hikes' == get_post_type()  && is_single() ): ?>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmZRRKW006CPNupNCPJx1jfVfdHiP3QvI&callback=initMap"async defer></script>
+<?php endif;?>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

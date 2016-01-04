@@ -137,6 +137,10 @@ class foSetup {
 		wp_enqueue_style( 'fo-style', FO_THEME_URL.'/assets/css/style.css' );
 		wp_enqueue_script( 'fo-scripts', FO_THEME_URL.'/assets/js/scripts.js', array('jquery'), FO_THEME_VERSION, true );
 
+		$location = fo_get_hike_gps_location();
+		$lat      = isset( $location['0'] ) ? $location['0'] : false;
+		$long      = isset( $location['1'] ) ? $location['1'] : false;
+
 		$nonces = array(
 			'bookmark'			=> wp_create_nonce('process_bookmark'),
 			'delete_bookmark' 	=> wp_create_nonce('process_delete_bookmarks')
@@ -148,7 +152,9 @@ class foSetup {
  			array(
  				'ajaxurl' 		=> admin_url( 'admin-ajax.php' ),
  				'nonces'		=> $nonces,
- 				'dashboard_url' => site_url('dashboard')
+ 				'dashboard_url' => site_url('dashboard'),
+ 				'hike_lat'		=> $lat,
+ 				'hike_long'		=> $long
  			)
  		);
 

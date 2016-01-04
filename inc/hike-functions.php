@@ -32,6 +32,7 @@ function fo_get_hike_location( $post_id = 0 ){
 *
 *	@param $post_id int id of the post
 *	@since 1.0
+*	@return array
 */
 function fo_get_hike_gps_location( $post_id = 0 ){
 
@@ -39,6 +40,7 @@ function fo_get_hike_gps_location( $post_id = 0 ){
 		$post_id = get_the_ID();
 
 	$ret = get_post_meta( $post_id, '_hike_location', true );
+	$ret = $ret ? explode(',', $ret) : false;
 
 	return $ret ? $ret : false;
 
@@ -76,18 +78,31 @@ function fo_get_hike_difficulty( $post_id = 0 ){
 
 	$out = '';
 
+	$easy_tooltip = 'data-toggle="tooltip" data-placement="bottom" title="Easy"';
+	$moderate_tooltip = 'data-toggle="tooltip" data-placement="bottom" title="Moderate"';
+	$ms_tooltip = 'data-toggle="tooltip" data-placement="bottom" title="Moderately Strenuous"';
+	$strenuous_tooltip = 'data-toggle="tooltip" data-placement="bottom" title="Strenuous"';
+
 	if ( 'easy' == $difficulty ) {
-		$out .= '<i class="fo-icon fo-icon-circle"></i>
-				<i class="fo-icon fo-icon-circle-o"></i>
-				<i class="fo-icon fo-icon-circle-o"></i>';
+		$out .= '<i class="fo-icon fo-icon-circle" '.$easy_tooltip.'></i>
+				<i class="fo-icon fo-icon-circle-o" '.$moderate_tooltip.'></i>
+				<i class="fo-icon fo-icon-circle-o" '.$ms_tooltip.'></i>
+				<i class="fo-icon fo-icon-circle-o" '.$strenuous_tooltip.'></i>';
 	} elseif ( 'moderate' == $difficulty ) {
-		$out .= '<i class="fo-icon fo-icon-circle"></i>
-				<i class="fo-icon fo-icon-circle"></i>
-				<i class="fo-icon fo-icon-circle-o"></i>';
-	} elseif ( 'difficult' == $difficulty ) {
-		$out .= '<i class="fo-icon fo-icon-circle"></i>
-				<i class="fo-icon fo-icon-circle"></i>
-				<i class="fo-icon fo-icon-circle"></i>';
+		$out .= '<i class="fo-icon fo-icon-circle" '.$easy_tooltip.'></i>
+				<i class="fo-icon fo-icon-circle" '.$moderate_tooltip.'></i>
+				<i class="fo-icon fo-icon-circle-o" '.$ms_tooltip.'></i>
+				<i class="fo-icon fo-icon-circle-o" '.$strenuous_tooltip.'></i>';
+	} elseif ( 'moderately-strenuous' == $difficulty ) {
+		$out .= '<i class="fo-icon fo-icon-circle" '.$easy_tooltip.'></i>
+				<i class="fo-icon fo-icon-circle" '.$moderate_tooltip.'></i>
+				<i class="fo-icon fo-icon-circle" '.$ms_tooltip.'></i>
+				<i class="fo-icon fo-icon-circle-o" '.$strenuous_tooltip.'></i>';
+	} elseif ( 'strenuous' == $difficulty ) {
+		$out .= '<i class="fo-icon fo-icon-circle" '.$easy_tooltip.'></i>
+				<i class="fo-icon fo-icon-circle" '.$moderate_tooltip.'></i>
+				<i class="fo-icon fo-icon-circle" '.$ms_tooltip.'></i>
+				<i class="fo-icon fo-icon-circle" '.$strenuous_tooltip.'></i>';
 	}
 
 	return $out;
