@@ -1,10 +1,13 @@
-.site-dashboard,
-.archive-page {
-	.page-title,
-	.page-header {
-		margin-top:0;
+
+.page-title,
+.page-header {
+	margin-top:0;
+
+	h2 {
+		margin-top:8px;
 	}
 }
+
 
 .widget-area--inner {
 	background:#fff;
