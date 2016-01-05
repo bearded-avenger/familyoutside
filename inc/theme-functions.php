@@ -183,13 +183,13 @@ function fo_social_sharing( $class = '', $post_id = 0 ){
 	?>
 		<ul class="<?php echo sanitize_html_class( $class );?> fo-share--wrap">
 
-			<?php if ( is_user_logged_in() ) :
+			<?php
 				if ( function_exists('fo_has_user_bookmarked') && fo_has_user_bookmarked( get_current_user_ID(), $post_id ) ) { ?>
 					<li><a href="#" data-postid="<?php echo absint( $post_id );?>" class="fo-bookmark-it fo-bookmark--unbookmark" title="Remove from favorites"><i class="fo-icon fo-icon-heart"></i></a></li>
 				<?php } else { ?>
 					<li><a href="#" data-postid="<?php echo absint( $post_id );?>" class="fo-bookmark-it" title="Add to favorites"><i class="fo-icon fo-icon-heart-o"></i></a></li>
 				<?php }
-			endif; ?>
+			?>
 
 			<li><a href="#" class="fo--share__twitter" title="Share on Twitter" ><i class="fo-icon fo-icon-twitter-square"></i></a></li>
 			<li><a href="http://pinterest.com/pin/create/button/?url=<?php echo urlencode(get_permalink());?>&media=<?php echo $feat_image;?>&description=<?php echo the_title();?>" class="pin-it-button" title="Share on Pinterest" count-layout="horizontal"  onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=350,width=800');return false;" target="_blank" ><i class="fo-icon fo-icon-pinterest"></i></a></li>

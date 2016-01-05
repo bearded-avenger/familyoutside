@@ -227,10 +227,11 @@ body.stop-scrolling {
       background-color: darken($btnBlue, 10%);
     }
     &.cancel {
+    	color:$text-muted;
       background-color: transparent;
-      border:1px solid white;
+      border:1px solid $text-muted;
       &:hover {
-        background-color: darken($btnGray, 3%);
+        background-color: white;
       }
       &:active {
         background-color: darken($btnGray, 10%);

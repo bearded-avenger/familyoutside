@@ -14,42 +14,60 @@
 			post_id: 		$this.data('postid')
 		}
 
-		$.post( vars.ajaxurl, data, function(response) {
+		if ( 'true' == fo_local_vars.loggedin ) {
 
-			if ( true == response.success ) {
+			$.post( vars.ajaxurl, data, function(response) {
 
-				var	rem = 'fo-bookmark--unbookmark'
-				,	add = 'fo-bookmark-it'
+				if ( true == response.success ) {
 
-				if ( $this.hasClass( rem ) ) {
+					var	rem = 'fo-bookmark--unbookmark'
+					,	add = 'fo-bookmark-it'
 
-					$this.removeClass( rem )
-					.addClass( add )
-					.find('.fo-icon')
-					.removeClass('fo-icon-heart')
-					.addClass('fo-icon-heart-o')
+					if ( $this.hasClass( rem ) ) {
 
-				} else {
+						$this.removeClass( rem )
+						.addClass( add )
+						.find('.fo-icon')
+						.removeClass('fo-icon-heart')
+						.addClass('fo-icon-heart-o')
 
-					$this.addClass( rem )
-					.find('.fo-icon')
-					.removeClass('fo-icon-heart-o')
-					.addClass('fo-icon-heart')
+					} else {
 
-					swal({
-						title: "Added to favorites!",
-						type: "success",
-						html:true,
-						text: 'You can manage all of your favorited items by visiting your account dashboard <a href="'+fo_local_vars.dashboard_url+'">here</a>.',
-						showCancelButton: false,
-						confirmButtonColor: "#50AEE2",
-						confirmButtonText: "Got it!"
-					});
+						$this.addClass( rem )
+						.find('.fo-icon')
+						.removeClass('fo-icon-heart-o')
+						.addClass('fo-icon-heart')
+
+						swal({
+							title: "Added to favorites!",
+							type: "success",
+							html:true,
+							text: 'You can manage all of your favorited items by visiting your account dashboard <a href="'+fo_local_vars.dashboard_url+'">here</a>.',
+							showCancelButton: false,
+							confirmButtonColor: "#50AEE2",
+							confirmButtonText: "Got it!"
+						});
+					}
+
 				}
 
-			}
+			});
 
-		});
+		} else {
+
+			swal({
+				title: "Whaoh nelly!",
+				type: "info",
+				html:true,
+				text: 'You have to be logged in to do that! Create a free account to add and manage your favorite hikes and reviews!',
+				showCancelButton: true,
+				cancelButtonText:'No thanks',
+				confirmButtonColor: "#50AEE2",
+				confirmButtonText: "Let's do it!"
+			}, function(){
+				$('#modal--create-account').modal('show')
+			});
+		}
 
 	});
 
