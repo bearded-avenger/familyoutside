@@ -10,7 +10,9 @@ class foSetup {
 		define('FO_THEME_DIR', 				get_template_directory());
 		define('FO_THEME_URL', 				get_template_directory_uri());
 
-		add_action('init', 			array($this,'dashboard_redirect'));
+		add_filter( 'wp_mail_from', 		array( $this, 'mail_from' ), 10, 1 );
+		add_filter( 'wp_mail_from_name', 	array( $this, 'mail_from_name' ), 10, 1 );
+		add_action('init', 					array($this,'dashboard_redirect'));
 		add_action('wp_head',				array($this,'typekit'));
 		add_action( 'after_setup_theme', 	array($this,'setup'));
 		add_action( 'widgets_init', 		array($this,'widgets_init') );
@@ -19,6 +21,22 @@ class foSetup {
 
 		$this->includes();
 
+	}
+
+	/**
+	* Filter the from email fro mails sent with wp_mail
+	*	@since 1.0
+	*/
+	function mail_from( $email ){
+		return 'info@afamilyoutside.com';
+	}
+
+	/**
+	*	Filter the name on outgoing mails sent with wp_mail
+	*	@since 1.0
+	*/
+	function mail_from_name( $name ){
+		return 'A Family Outside';
 	}
 	/**
 	*
