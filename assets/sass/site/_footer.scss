@@ -69,6 +69,10 @@
 	}
 }
 
+.mixpanel-link {
+	float:right;
+}
+
 .instagram-pics {
 	@include unstyled();
 	li {
