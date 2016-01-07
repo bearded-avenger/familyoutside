@@ -25,8 +25,9 @@ class foSetup {
 	}
 
 	function custom_feed( $query ) {
-	 	if ($query->is_main_query() && $query->is_front_page()) {
-	        $query->set('post_type', array('post', 'hikes','review'));
+	 	if ( $query->is_main_query() && $query->is_front_page() ) {
+	        $query->set('post_type', array('post', 'hikes','reviews'));
+	        $query->set('post__not_in', fo_get_featured_ids() );
 	    }
 	}
 
