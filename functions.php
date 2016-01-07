@@ -31,9 +31,15 @@ class foSetup {
 	*	@since 1.0
 	*/
 	function custom_feed( $query ) {
-	 	if ( $query->is_main_query() && $query->is_front_page() ) {
+	 	if ( ( $query->is_main_query() && $query->is_front_page() ) || $query->is_author ) {
+
+	 		// don't exclude featured posts in author archive
+	 		if ( !$query->is_author ) {
+	 			$query->set('post__not_in', fo_get_featured_ids() );
+	 		}
+
 	        $query->set('post_type', array('post', 'hikes','reviews'));
-	        $query->set('post__not_in', fo_get_featured_ids() );
+
 	    }
 	}
 

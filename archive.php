@@ -13,6 +13,15 @@ get_header(); ?>
 		<main id="main" class="site-main facetwp-template archive-page" role="main">
 
 		<?php
+
+		if ( is_author() ): ?>
+
+			<header class="page-header">
+				<?php the_archive_title( '<h2 class="page-title">', '</h2>' ); ?>
+			</header><!-- .page-header -->
+
+		<?php endif;
+
 		if ( have_posts() ) :
 
 			while ( have_posts() ) : the_post();
@@ -21,7 +30,7 @@ get_header(); ?>
 
 			endwhile;
 
-			if ( ( 'hikes' == get_post_type() || 'reviews' == get_post_type() ) && class_exists('FacetWP') ) {
+			if ( ( 'hikes' == get_post_type() || 'reviews' == get_post_type() || is_author() ) && class_exists('FacetWP') ) {
 
 				echo facetwp_display( 'pager' );
 
