@@ -19,16 +19,31 @@ class foSetup {
 		add_action( 'wp_enqueue_scripts', 	array($this,'scripts') );
 		add_action('template_redirect', 	array($this,'load_posts'));
 		add_filter( 'pre_get_posts',	 	array($this,'custom_feed'));
+		add_filter('excerpt_length', 		array($this,'excerpt_length'));
 
 		$this->includes();
 
 	}
 
+	/**
+	*	Add post types to main query plus exclude featured
+	*
+	*	@since 1.0
+	*/
 	function custom_feed( $query ) {
 	 	if ( $query->is_main_query() && $query->is_front_page() ) {
 	        $query->set('post_type', array('post', 'hikes','reviews'));
 	        $query->set('post__not_in', fo_get_featured_ids() );
 	    }
+	}
+
+	/**
+	*	Shorten length  of excerpt
+	*
+	*	@since 1.0
+	*/
+	function excerpt_length($length) {
+		return 22;
 	}
 
 	/**
