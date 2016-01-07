@@ -18,9 +18,16 @@ class foSetup {
 		add_action( 'widgets_init', 		array($this,'widgets_init') );
 		add_action( 'wp_enqueue_scripts', 	array($this,'scripts') );
 		add_action('template_redirect', 	array($this,'load_posts'));
+		add_filter( 'pre_get_posts',	 	array($this,'custom_feed'));
 
 		$this->includes();
 
+	}
+
+	function custom_feed( $query ) {
+	 	if ($query->is_main_query() && $query->is_front_page()) {
+	        $query->set('post_type', array('post', 'hikes','review'));
+	    }
 	}
 
 	/**
@@ -185,16 +192,17 @@ class foSetup {
 
 	public function load_posts() {
 
-	 	global $wp_query;
 
 	 	// Add code to index pages.
-	 	if ( is_front_page() || is_home() || is_archive() || is_search() ) {
+	 	if ( is_front_page() ) {
 	 		// Queue JS and CSS
 	 		wp_enqueue_script('fo-post-loader',FO_THEME_URL.'/assets/js/load-posts.js',array('jquery'),FO_THEME_VERSION,true);
 
 	 		$paged = ( get_query_var('paged') > 1 ) ? get_query_var('paged') : 1;
 
-	 		$max = '';
+	 		
+	 		global $wp_query;
+	 		$max = $wp_query->max_num_pages;
 
 	 		// Add some parameters for the JS.
 	 		wp_localize_script(
@@ -202,6 +210,7 @@ class foSetup {
 	 			'pagi_vars',
 	 			array(
 	 				'startPage' => $paged,
+	 				'maxPages' => $max,
 	 				'loadMore' => 'Load More Posts',
 	 				'loading' => 'Loading...',
 	 				'nextLink' => next_posts($max, false)

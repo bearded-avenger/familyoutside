@@ -1,43 +1,65 @@
 jQuery(document).ready(function($) {
 
-	var pageNum  = parseInt(pagi_vars.startPage) + 1
-	, 	max 	 = $('#primary').data('max-pages')
-	, 	nextLink = pagi_vars.nextLink
-	, 	loadMore = pagi_vars.loadMore
-	, 	loading  = pagi_vars.loading
-	, 	button   = '.fo-load-more-posts a';
+	// The number of the next page to load (/page/x/).
+	var pageNum = parseInt(pagi_vars.startPage) + 1;
 
+	// The maximum number of pages the current query can return.
+	var max = pagi_vars.maxPages;
+
+	// The link of the next page of posts.
+	var nextLink = pagi_vars.nextLink;
+
+	var loadMore = pagi_vars.loadMore;
+	var loading = pagi_vars.loading;
+
+	/**
+	 * Replace the traditional navigation with our own,
+	 * but only if there is at least one page of new posts to load.
+	 */
 	if(pageNum <= max) {
+		// Insert the "More Posts" link.
 		$('#primary')
 			.append('<div class="fo-posts clearfix fo-posts-'+ pageNum +'"></div>')
 			.append('<p class="fo-load-more-posts fix"><a href="#">'+loadMore+'</a></p>');
+
 	}
 
-	$(button).click(function() {
 
+	/**
+	 * Load new posts when the link is clicked.
+	 */
+	$('.fo-load-more-posts a').click(function() {
+
+		// Are there more posts to load?
 		if(pageNum <= max) {
 
+			// Show that we're working.
 			$(this).text(loading);
 
-			$(button).addClass('btn-spin');
+			$('.fo-load-more-posts a').addClass('btn-spin');
 
 			$('.fo-posts-'+ pageNum).load(nextLink + ' .post--archive',
 				function() {
-
+					// Update page number and nextLink.
 					pageNum++;
 					nextLink = nextLink.replace(/\/page\/[0-9]?/, '/page/'+ pageNum);
 
-					$(button).before('<div class="fo-posts clearfix fo-posts-'+ pageNum +'"></div>')
+					// Add a new placeholder, for when user clicks again.
+					$('.fo-load-more-posts')
+						.before('<div class="fo-posts clearfix fo-posts-'+ pageNum +'"></div>')
 
+					// Update the button message.
 					if ( pageNum <= max ) {
-						$(button).text(loadMore);
-						$(button).removeClass('btn-spin');
+						$('.fo-load-more-posts a').text(loadMore);
+						$('.fo-load-more-posts a').removeClass('btn-spin');
 					} else {
-						$(button).parent().remove()
+						$('.fo-load-more-posts a').parent().remove()
 					}
 
 				}
 			);
+		} else {
+			$('.fo-load-more-posts a').append('.');
 		}
 
 		return false;
