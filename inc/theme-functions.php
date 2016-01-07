@@ -145,7 +145,7 @@ function fo_draw_object_gallery( $post_id = 0, $size = 'full' ) {
 *	A global pagionation function
 *	@since 5.0.4
 */
-function fo_pagination($wp_query){
+function fo_pagination(){
 
 	$bignum = 999999999;
 
