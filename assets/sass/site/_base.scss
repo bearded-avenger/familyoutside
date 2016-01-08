@@ -34,3 +34,13 @@
 .unstyled {
 	@include unstyled();
 }
+
+.entry-content {
+	img {
+		@include img-responsive();
+	}
+
+	a[rel~="attachment"]:hover {
+		cursor:zoom-in;
+	}
+}
