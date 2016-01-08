@@ -8,6 +8,13 @@
 		float:left;
 		width:150px;
 		margin-right:$padding;
+
+	    img {
+	    	padding:3px;
+			background:white;
+			border-radius:7px;
+			@include box-shadow(1px 1px 1px rgba(0,0,0,0.15));
+	    }
 	}
 
 	.post--archive__content {
