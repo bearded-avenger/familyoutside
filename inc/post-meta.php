@@ -59,6 +59,13 @@ class foPostMeta{
 		    )
 		) );
 
+		$cmb->add_field( array(
+	        'name'       => 'Featured Image Background Positioning (optional)',
+	        'desc'       => 'Positioning for featured image',
+	        'id'         => '_feat_img_position',
+	        'type'       => 'text'
+	    ) );
+
 	}
 
 	// Product Review Metaboxes
@@ -92,6 +99,13 @@ class foPostMeta{
 	        'desc'       => 'Give a summary, for those users who are too lazy to read the whole review.',
 	        'id'         => '_product_summary',
 	        'type'       => 'wysiwyg'
+	    ) );
+
+		$cmb->add_field( array(
+	        'name'       => 'Featured Image Background Positioning (optional)',
+	        'desc'       => 'Positioning for featured image',
+	        'id'         => '_feat_img_position',
+	        'type'       => 'text'
 	    ) );
 
 	}

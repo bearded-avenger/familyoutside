@@ -37,6 +37,22 @@ function fo_get_featured_ids(){
 
 }
 
+/**
+*	GEt custom positioning of featured image if available
+*
+*	@since 1.0
+*/
+function fo_get_featured_img_pos( $post_id = 0 ){
+
+	if ( empty ( $post_id ) )
+		$post_id = get_the_ID();
+
+	$positioning = get_post_meta( $post_id, '_feat_img_position', true );
+
+	return $positioning ? $positioning : false;
+
+}
+
 
 /**
 *	Get the rating of a post object

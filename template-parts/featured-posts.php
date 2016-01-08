@@ -50,12 +50,17 @@ $q = new wp_query( $args );
 *	@param $class string the css class
 *	@param $category string the post type
 */
-function featured_posts_inner( $img, $class, $category ){ ?>
+function featured_posts_inner( $img, $class, $category ){ 
+
+	$positioning = fo_get_featured_img_pos();
+
+	$positioning = isset( $positioning ) ? sprintf('background-position:%s', $positioning ) : false;
+	?>
 
 	<a href="<?php echo get_permalink();?>" class="featured-posts--item__inner">
 		<span class="label <?php echo sanitize_html_class( $class );?>"><?php echo esc_html( $category );?></span>
 		<h3><?php echo get_the_title();?></h3>
-		<div class="featured-posts--img" style="background-image:url(<?php echo esc_url( $img[0] );?>);"></div>
+		<div class="featured-posts--img" style="background-image:url(<?php echo esc_url( $img[0] );?>);<?php echo $positioning;?>"></div>
 	</a>
 
 <?php }
