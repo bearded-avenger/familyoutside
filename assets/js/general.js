@@ -28,6 +28,9 @@
 		    else
 		         window.open("http://maps.google.com/maps?daddr="+fo_local_vars.hike_lat+","+fo_local_vars.hike_long+"&amp;ll=");
 		}
+
+		// Fitvids
+		$('.entry-content').fitVids();
 	});
 
 
