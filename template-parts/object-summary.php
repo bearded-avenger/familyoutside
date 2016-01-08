@@ -22,7 +22,7 @@
 			?>
 			<div class="object-summary--lt">
 				<h3>Get There</h3>
-				<?php echo fo_get_hike_location_description();?>
+				<?php echo apply_filters('the_content',fo_get_hike_location_description() );?>
 				<a id="hike-map--directions" href="#" class="btn btn-primary btn-xs">Get Directions</a>
 			</div>
 			<div class="object-summary--rt">
