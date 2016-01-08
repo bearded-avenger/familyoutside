@@ -129,8 +129,9 @@ function fo_draw_object_gallery( $post_id = 0, $size = 'full' ) {
 			echo '<div id="object-gallery">';
 			    foreach ( (array) $files as $attachment_id => $attachment_url ) {
 
-			    	$image = wp_get_attachment_image_src( $attachment_id, $size );
-			        echo '<img data-src="'.$image[0].'" >';
+			    	$image 	= wp_get_attachment_image_src( $attachment_id, $size );
+			    	$alt     = get_post_meta( $attachment_id, '_wp_attachment_image_alt', true );
+			        echo '<img data-src="'.$image[0].'" alt="'.$alt.'" >';
 			    }
 		    echo '</div>';
 

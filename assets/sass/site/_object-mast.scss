@@ -21,6 +21,7 @@
 
 	.container {
 		@include clearfix();
+		padding:0;
 	}
 
 	.object-mast--lt {
