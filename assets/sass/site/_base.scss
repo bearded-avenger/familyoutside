@@ -57,3 +57,12 @@
 #hike-map--directions {
 	clear:left;
 }
+
+.page-col-8 {
+	@include make-md-column(8);
+	padding-left:0;
+}
+.page-col-4 {
+	@include make-md-column(4);
+	padding-right:0;
+}
