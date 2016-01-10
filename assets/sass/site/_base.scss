@@ -28,6 +28,10 @@
 #secondary {
 	@include make-md-column(4);
 	padding-right:0;
+
+	img {
+		@include img-responsive();
+	}
 }
 
 // Helper Classes
