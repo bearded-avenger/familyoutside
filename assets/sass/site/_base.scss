@@ -66,3 +66,16 @@
 	@include make-md-column(4);
 	padding-right:0;
 }
+
+.fo-pagination {
+	.page-numbers {
+		@extend .btn;
+		@extend .btn-default;
+		@extend .btn-xs;
+		color:$text-muted;
+
+		&.current {
+			@extend .btn.active;
+		}
+	}
+}

@@ -17,7 +17,7 @@ class foSetup {
 		add_action( 'after_setup_theme', 	array($this,'setup'));
 		add_action( 'widgets_init', 		array($this,'widgets_init') );
 		add_action( 'wp_enqueue_scripts', 	array($this,'scripts') );
-		add_action('template_redirect', 	array($this,'load_posts'));
+		//add_action('template_redirect', 	array($this,'load_posts'));
 		add_filter( 'pre_get_posts',	 	array($this,'custom_feed'));
 		add_filter('excerpt_length', 		array($this,'excerpt_length'));
 

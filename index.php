@@ -1,7 +1,10 @@
 <?php
 get_header();
 
-	get_template_part('template-parts/featured-posts');
+ 	if ( 0 == get_query_var('paged') ) {
+
+		get_template_part('template-parts/featured-posts');
+	}
 
 	?><main id="primary" class="site-main" role="main"> <?php
 
@@ -13,7 +16,7 @@ get_header();
 
 			endwhile;
 
-			//fo_pagination( $wp_query );
+			fo_pagination();
 
 		endif;
 	?> </main> <?php
