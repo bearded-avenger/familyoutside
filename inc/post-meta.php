@@ -48,6 +48,20 @@ class foPostMeta{
 	        'type'       => 'textarea'
 	    ) );
 
+    	$cmb->add_field( array(
+	        'name'       => 'He Said',
+	        'desc'       => 'The hike according to Nick',
+	        'id'         => '_hike_he_said',
+	        'type'       => 'textarea'
+	    ) );
+
+    	$cmb->add_field( array(
+	        'name'       => 'She Said',
+	        'desc'       => 'The hike according to Brandi',
+	        'id'         => '_hike_she_said',
+	        'type'       => 'textarea'
+	    ) );
+
 		$cmb->add_field( array(
 		    'name' => 'Hike Gallery Images',
 		    'desc' => 'Upload some images for this hike',

@@ -64,6 +64,23 @@ function fo_get_hike_location_description( $post_id = 0 ){
 }
 
 /**
+*	Get the description of the hike according 
+*
+*	@param $post_id int id of the post
+*	@since 1.0
+*/
+function fo_get_hike_they_said( $post_id = 0 , $who = 'she' ){
+
+	if ( empty( $post_id ) )
+		$post_id = get_the_ID();
+
+	$ret = get_post_meta( $post_id, '_hike_'.$who.'_said', true );
+
+	return $ret ? $ret : false;
+
+}
+
+/**
 *	Get the difficulty of a hike
 *
 *	@param $post_id int id of the post

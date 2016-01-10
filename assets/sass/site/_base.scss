@@ -79,3 +79,33 @@
 		}
 	}
 }
+
+// he said she said
+.they-said {
+
+	margin-top:$padding;
+
+	.alert {
+		@include flexbox;
+		@include align-items(center);
+		margin-bottom:5px;
+	}
+
+	.alert-he-said i{
+		color:$brand-primary;
+	}
+
+	.alert-she-said i{
+		color:$color-pink;
+	}
+
+	i {
+		margin-left:10px;
+		font-size:125%;
+	}
+
+	p {
+		padding-left:22px;
+	}
+
+}

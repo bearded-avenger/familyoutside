@@ -30,6 +30,10 @@ $color-hike:   	#649598;
 $color-review: 	#CB6C85;
 $color-news:   	#5D8FAE;
 
+$text-muted:                  #808997 !default;
+
+$color-pink:     #E238EC;
+
 //== Scaffolding
 //
 //## Settings for some of the most global styles.
@@ -667,6 +671,10 @@ $alert-danger-bg:             $state-danger-bg !default;
 $alert-danger-text:           $state-danger-text !default;
 $alert-danger-border:         $state-danger-border !default;
 
+$alert-they-said-bg:           #F8F8F8 !default;
+$alert-they-said-text:         $text-color !default;
+$alert-they-said-border:       $border-color !default;
+
 
 //== Progress bars
 //
@@ -875,7 +883,7 @@ $pre-scrollable-max-height:   340px !default;
 //** Horizontal offset for forms and lists.
 $component-offset-horizontal: 180px !default;
 //** Text muted color
-$text-muted:                  #808997 !default;
+
 //** Abbreviations and acronyms border color
 $abbr-border-color:           $gray-light !default;
 //** Headings small color

@@ -23,6 +23,8 @@
 				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'family-outside' ),
 				'after'  => '</div>',
 			) );
+
+			do_action('hike_after_content');
 		?>
 	</div><!-- .entry-content -->
 

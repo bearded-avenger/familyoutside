@@ -71,3 +71,7 @@
 .alert-danger {
   @include alert-variant($alert-danger-bg, $alert-danger-border, $alert-danger-text);
 }
+
+.alert-they-said {
+	@include alert-variant($alert-they-said-bg, $alert-they-said-border, $alert-they-said-text);
+}

@@ -20,6 +20,7 @@ class foSetup {
 		//add_action('template_redirect', 	array($this,'load_posts'));
 		add_filter( 'pre_get_posts',	 	array($this,'custom_feed'));
 		add_filter('excerpt_length', 		array($this,'excerpt_length'));
+		add_action( 'hike_after_content', 	array($this,'they_said'));
 
 		$this->includes();
 
@@ -214,7 +215,6 @@ class foSetup {
 
 	public function load_posts() {
 
-
 	 	// Add code to index pages.
 	 	if ( is_front_page() ) {
 	 		// Queue JS and CSS
@@ -239,6 +239,30 @@ class foSetup {
 	 			)
 	 		);
 	 	}
+	}
+
+	public function they_said(){
+
+		$he_said = fo_get_hike_they_said( get_the_ID(), 'he');
+		$she_said = fo_get_hike_they_said( get_the_ID(), 'she');
+
+		if ( is_single() && 'hikes' == get_post_type() && ( false !== $he_said || false !== $she_said ) ) {
+
+	        ?>
+	        <div class="they-said">
+	      		<h4>He said she said</h4>
+				<div class="alert alert-they-said alert-he-said">
+					<i class="fo-icon fo-icon-male"></i>
+					<?php echo apply_filters('the_content',$he_said);?>
+				</div>
+				<div class="alert alert-they-said alert-she-said">
+					<i class="fo-icon fo-icon-female"></i>
+					<?php echo apply_filters('the_content',$she_said);?>
+				</div>
+			</div><?php
+
+	    }
+
 	}
 }
 new foSetup();
