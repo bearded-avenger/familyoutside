@@ -234,7 +234,7 @@ function fo_return_type_data( $post_id = 0 ){
 			$label = 'Hike';
 			$class = 'label-hike';
 			break;
-		case 'revies':
+		case 'reviews':
 			$label = 'Review';
 			$class = 'label-review';
 			break;
