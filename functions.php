@@ -198,12 +198,13 @@ class foSetup {
  			'fo-scripts',
  			'fo_local_vars',
  			array(
- 				'loggedin'		=> is_user_logged_in() ? 'true' : false,
- 				'ajaxurl' 		=> admin_url( 'admin-ajax.php' ),
- 				'nonces'		=> $nonces,
- 				'dashboard_url' => site_url('dashboard'),
- 				'hike_lat'		=> $lat,
- 				'hike_long'		=> $long
+ 				'loggedin'			=> is_user_logged_in() ? 'true' : false,
+ 				'ajaxurl' 			=> admin_url( 'admin-ajax.php' ),
+ 				'nonces'			=> $nonces,
+ 				'dashboard_url' 	=> site_url('dashboard'),
+ 				'hike_lat'			=> $lat,
+ 				'hike_long'			=> $long,
+ 				'favs_empty_state'	=> fo_empty_state('favorites', true)
  			)
  		);
 

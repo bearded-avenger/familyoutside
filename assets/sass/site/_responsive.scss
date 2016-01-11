@@ -222,6 +222,10 @@
 			}
 		}
 
+		.post--archive .post--archive__content {
+		   @include calc(width, "100% - 85px");
+		}
+
 		.object-mast--meta li {
 			float:none;
 			width:100%;

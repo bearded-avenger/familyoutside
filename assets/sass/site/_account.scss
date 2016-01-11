@@ -129,3 +129,18 @@
 		margin-bottom:0;
 	}
 }
+
+.fo-empty-state {
+
+	margin:0;
+
+	i {
+		float:left;
+		margin-right:$padding--sm;
+		position:relative;
+		top:4px;
+	}
+	p {
+		margin:0;
+	}
+}

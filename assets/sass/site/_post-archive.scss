@@ -25,6 +25,14 @@
 
 	.post--archive__title {
 		margin:0 0 $padding--sm;
+		display:inline-block;
+
+		+ .label {
+			vertical-align: top;
+		    position: relative;
+		    top: 6px;
+		    left: 6px;
+		}
 
 		a {
 			color:$text-color;

@@ -83,7 +83,7 @@ get_header(); ?>
 
 						} else {
 
-							'Oh no! We detected no bookmarks!';
+							echo fo_empty_state();
 						}
 
 			    	?>

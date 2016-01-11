@@ -13,12 +13,6 @@ get_header(); ?>
 		<?php
 		while ( have_posts() ) : the_post();
 
-			if ( 'post' == get_post_type() ){
-				the_title( '<h2 class="object-mast--title">','</h2>' );
-				family_outside_posted_on();
-				fo_social_sharing();
-			}
-
 			get_template_part( 'template-parts/content' );
 
 			if ( 'post' == get_post_type() && ( comments_open() || get_comments_number() ) ) :

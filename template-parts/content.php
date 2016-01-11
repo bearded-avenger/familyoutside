@@ -11,6 +11,12 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
+	<?php if ( 'post' == get_post_type() ){
+		the_title( '<h2 class="object-mast--title">','</h2>' );
+		family_outside_posted_on();
+		fo_social_sharing();
+	} ?>
+
 	<div class="entry-content">
 		<?php
 			the_content( sprintf(

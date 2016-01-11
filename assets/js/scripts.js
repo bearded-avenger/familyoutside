@@ -1518,14 +1518,15 @@
 
 			$.post( fo_local_vars.ajaxurl, data, function(response) {
 
-				console.log(response)
-
 				if ( true == response.success ) {
 
 					$('.delete-me').fadeOut().remove()
 					$('.delete-bookmarks').removeClass('btn-spin')
 
 				}
+
+				$('#delete-bookmarks').removeClass('btn-spin')
+				$('#bookmarks').html( fo_local_vars.favs_empty_state ).hide().fadeIn();
 
 			});
 

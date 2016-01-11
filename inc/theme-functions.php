@@ -291,3 +291,31 @@ function fo_calculate_total_time( $minutes = 0 ) {
 
 	return sprintf('%s%s', $hours, $minutes);
 }
+
+/**
+*	Provide an empty state notification
+*
+*	@since 1.0
+*/
+function fo_empty_state( $type = 'favorites', $buffer = false ) {
+
+	if ( true == $buffer ) { ob_start(); }
+
+	switch ( $type ) {
+		case 'favorites':
+			$icon = 'heart-o';
+			$text = 'You currently do not have any favorited items.';
+			break;
+	}
+
+	?><div class="fo-empty-state well">
+
+		<i class="fo-icon fo-icon-<?php echo $icon;?>"></i>
+
+		<p><?php echo $text;?></p>
+
+	</div><?php
+
+	if ( true == $buffer ) { return ob_get_clean(); }
+
+}
