@@ -29,9 +29,11 @@ class foSignup {
 						<?php self::draw_form();?>
 			
 					</div>
+					<!--
 					<div class="modal-footer">
 						<p class="modal--terms">By creating an account you agree to our <a href="http://support.foookie.com/article/170-terms-of-use">terms of use</a> and <a href="http://support.foookie.com/article/172-privacy-policy">privacy policy</a>.</p>
 					</div>
+				-->
 				</div>
 			</div>
 		</div>
