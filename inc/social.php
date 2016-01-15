@@ -33,6 +33,7 @@ class foSocial{
 		<meta property="og:type" content="website">
 		<?php echo !is_404() ? self::get_img('property','og', 'fb') : false;?>
 		<meta property="og:locale" content="en_us">
+		<meta property="fb:app_id" content="490314757815079" />
 
 		<!-- Twitter Card Meta -->
 		<meta name="twitter:card" content="summary">
