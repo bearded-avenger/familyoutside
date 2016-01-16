@@ -176,6 +176,10 @@ body .facetwp-facet {
 	bottom: 6px;
     padding-top: 5px;
 
+    h5 {
+    	max-width:150px;
+    }
+
     img {
     	background:$brand-primary;
     	@include transition(opacity .2s ease);
