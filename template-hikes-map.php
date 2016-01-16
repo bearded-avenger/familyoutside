@@ -82,6 +82,7 @@ get_header(); ?>
 						$long      	= isset( $location['1'] ) ? $location['1'] : false;
 
 						?><div class="map-item"
+								style="display:none"
 								data-title="<?php echo esc_attr( $title ); ?>"
 								data-latitude="<?php echo $lat; ?>"
 								data-longitude="<?php echo $long; ?>"
