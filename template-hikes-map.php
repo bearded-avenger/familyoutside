@@ -35,7 +35,7 @@ get_header(); ?>
 				                    parseFloat(lng)
 				                ),
 				                info: new google.maps.InfoWindow({
-				                    content: '<div class="map-item--window">' + '<h5>' + title + '</h5>' + ('' != distance ? '<br />' + distance : '' ) + $(this).html() + '</div>'
+				                    content: '<div class="map-item--window">' + '<h5>' + title + '</h5>' + ('' != distance ? '<span class="map-item--distance">'+distance+'</span>' : '' ) + $(this).html() + '</div>'
 				                })
 				            });
 				            google.maps.event.addListener(marker, 'click', function() {
