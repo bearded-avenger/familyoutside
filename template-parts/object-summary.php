@@ -11,13 +11,11 @@
 
 	<div class="container">
 
-		<?php if ( 'hikes' == get_post_type() && is_single() ) { ?>
-			
-			<?php
+		<?php if ( 'hikes' == get_post_type() && is_single() ) {
 
-				$location = fo_get_hike_gps_location();
-				$lat      = isset( $location['0'] ) ? $location['0'] : false;
-				$long      = isset( $location['1'] ) ? $location['1'] : false;
+			$location = fo_get_hike_gps_location();
+			$lat      = isset( $location['0'] ) ? $location['0'] : false;
+			$long      = isset( $location['1'] ) ? $location['1'] : false;
 
 			?>
 			<div class="object-summary--lt">

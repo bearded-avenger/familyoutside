@@ -249,3 +249,10 @@
 	}
 
 }
+
+@mixin styled-back(){
+	background:#fff;
+	border:1px solid $border-color;
+	border-radius:$border-radius-base;
+	padding:$padding;
+}

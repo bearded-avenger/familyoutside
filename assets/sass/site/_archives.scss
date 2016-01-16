@@ -10,10 +10,7 @@
 
 
 .widget-area--inner {
-	background:#fff;
-	border:1px solid $border-color;
-	border-radius:$border-radius-base;
-	padding:$padding;
+	@include styled-back;
 }
 
 .widget-area--ads {
@@ -66,4 +63,153 @@ body .facetwp-facet {
 		@extend .btn-default;
 		@extend .btn-xs;
 	}
+}
+
+
+// Hikes Map Page
+.map-item {
+	display:none;
+	position:absolute;
+	left:-10000px;
+	@include opacity(0);
+}
+
+// Filter View
+.filter-view {
+	@include unstyled;
+	@include clearfix;
+	margin-bottom:$padding;
+	background:#fff;
+	border:1px solid $border-color;
+	border-radius:$border-radius-base;
+
+	li {
+		padding:0;
+		float:left;
+		width:50%;
+
+		i {
+			margin-right:$padding--sm;
+			position:relative;
+			top:1px;
+		}
+
+		a {
+			padding:$padding--sm;
+			text-align:center;
+			display:block;
+			color:$text-muted;
+			font-size:$font-size-small;
+			@include transition(all .2s ease);
+
+			&:hover,
+			&:focus {
+				text-decoration:none;
+			}
+
+			&:hover {
+				background:$brand-primary;
+				color:#f8f8f8;
+			}
+		}
+
+		&:first-child a:hover {
+			border-top-left-radius:$border-radius-base - 1;
+			border-bottom-left-radius:$border-radius-base - 1;
+		}
+
+		&:last-child a:hover {
+			border-top-right-radius:$border-radius-base - 1;
+			border-bottom-right-radius:$border-radius-base - 1;
+		}
+	}
+}
+
+.post-type-archive-hikes {
+	.filter-view--list a{
+		background:$brand-primary;
+		color:#f8f8f8;
+	}
+}
+
+.page-template-template-hikes-map {
+
+	.header--navigation a[href="/hikes"] {
+		color:$brand-primary;
+	}
+	.filter-view--map a {
+		background:$brand-primary;
+		color:#f8f8f8;
+	}
+
+	.widget-area--ads {
+		display:none;
+	}
+}
+
+.facetwp-type-proximity {
+	.locate-me {
+		left: 10px;
+	    right: auto;
+	    z-index: 1;
+	    top: 10px;
+	}
+
+	#facetwp-location {
+		margin-bottom:5px;
+	}
+
+	#facetwp-radius,
+	#facetwp-location {
+		color:#808997;
+		font-size:$font-size-small;
+	}
+
+	#facetwp-location {
+		padding-left:$padding * 2;
+	}
+}
+
+.map-item--window {
+	position:relative;
+	margin-right:-23px;
+	bottom: 6px;
+    padding-top: 5px;
+
+    img {
+    	background:$brand-primary;
+    	@include transition(opacity .2s ease);
+    }
+
+    .fo-icon {
+    	position:absolute;
+    	left:64px;
+    	bottom:64px;
+    	background:white;
+    	border-radius:100%;
+    	padding:7px 6px 6px 7px;
+    	height:25px;
+    	width:25px;
+    	@include transition(opacity .2s ease);
+    	@include opacity(0);
+    }
+
+    a {
+    	display:block;
+
+    	&:hover {
+    		text-decoration:none;
+    		img {
+    			@include opacity(0.8);
+    		}
+    		.fo-icon {
+    			@include opacity(0.7);
+    		}
+    	}
+    }
+
+}
+
+.gm-style-iw * {
+	overflow:visible !important;
 }

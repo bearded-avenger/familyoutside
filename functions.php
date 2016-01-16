@@ -138,6 +138,8 @@ class foSetup {
 			'caption',
 		) );
 
+		add_filter( 'facetwp_proximity_store_distance', '__return_true' );
+
 	}
 
 	/**
