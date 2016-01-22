@@ -137,7 +137,7 @@ class foSubmissions {
 
 					<div class="form-group">
 				    	<label class="file">
-						  	<input type="file" id="post-image" aria-label="File browser example" multiple="true">
+						  	<input type="file" name="post-images[]" id="post-image" aria-label="File browser example" multiple="multiple">
 						  	<span class="file-custom"></span>
 						</label>
 					</div>
@@ -193,8 +193,6 @@ class foSubmissions {
 
 				} else {
 
-					self::process_image('post-image', $post_id);
-
 					// Categories
 					wp_set_object_terms( absint( $post_id ), $age, 'hike_ages', true );
 					wp_set_object_terms( absint( $post_id ), $difficulty, 'hike_difficulty', true );
@@ -213,6 +211,36 @@ class foSubmissions {
 					update_post_meta( $post_id, '_hike_location', $gps_coords );
 					update_post_meta( $post_id, '_hike_location_desc', $location_desc );
 
+					if ( $_FILES ) {
+
+						$files = $_FILES['post-images'];
+
+						foreach ( $files['name'] as $key => $value ) {
+
+							if ( $files['name'][$key] ) {
+
+								$file = array(
+									'name'     => $files['name'][$key],
+									'type'     => $files['type'][$key],
+									'tmp_name' => $files['tmp_name'][$key],
+									'error'    => $files['error'][$key],
+									'size'     => $files['size'][$key]
+								);
+
+								$_FILES = array('post-images' => $file);
+
+								foreach ( $_FILES as $file => $array ) {
+
+									if( getimagesize( $array['tmp_name'] ) ){
+
+								        $newupload = self::insert_attachment( $file, $post_id);
+
+								    }
+
+								}
+							}
+						}
+					}
 				}
 
 
@@ -230,28 +258,17 @@ class foSubmissions {
 		}
 	}
 
-	/**
-	*
-	*	Process the incoming images from teh file upload
-	*/
-	public static function process_image( $file, $post_id ) {
+	public static function insert_attachment( $file_handler, $post_id ) {
 
-		require_once( ABSPATH . 'wp-admin/includes/image.php' );
-		require_once( ABSPATH . 'wp-admin/includes/file.php' );
-		require_once( ABSPATH . 'wp-admin/includes/media.php' );
+	  	if ( $_FILES[$file_handler]['error'] !== UPLOAD_ERR_OK ) __return_false();
 
-		$attachment_id = '';
+	  	require_once(ABSPATH . "wp-admin" . '/includes/image.php');
+	  	require_once(ABSPATH . "wp-admin" . '/includes/file.php');
+	  	require_once(ABSPATH . "wp-admin" . '/includes/media.php');
 
-		if ( $_FILES ) {
-	        foreach ($_FILES as $file => $array) {
-	            if ( $_FILES[$file]['error'] !== UPLOAD_ERR_OK ) {
-	                echo "upload error : " . $_FILES[$file]['error'];
-	                die();
-	            }
-	            $attachment_id = media_handle_upload( $file, $post_id  );
-	        }
-	    }
+	  	$attach_id = media_handle_upload( $file_handler, $post_id );
 
+	  	return $attach_id;
 	}
 
 	/**
