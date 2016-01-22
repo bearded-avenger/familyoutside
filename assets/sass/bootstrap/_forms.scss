@@ -26,6 +26,7 @@ legend {
   line-height: inherit;
   color: $legend-color;
   border: 0;
+  font-weight:bold;
   border-bottom: 1px solid $legend-border-color;
 }
 
@@ -833,13 +834,14 @@ input[type="checkbox"] {
   position: relative;
   display: inline-block;
   cursor: pointer;
-  height: 2.5rem;
+  height: 35px;
 }
 .file input {
   min-width: 14rem;
   margin: 0;
   filter: alpha(opacity=0);
   opacity: 0;
+  height:35px;
 }
 .file-custom {
   position: absolute;
@@ -847,10 +849,11 @@ input[type="checkbox"] {
   right: 0;
   left: 0;
   z-index: 5;
-  height: 2.5rem;
+  height: 35px;
   padding: .5rem 1rem;
   line-height: 1.5;
-  color: #555;
+  color: $input-color;
+  font-weight:400;
   background-color: #fff;
   border: .075rem solid #ddd;
   border-radius: .25rem;
@@ -865,23 +868,47 @@ input[type="checkbox"] {
 }
 .file-custom:before {
   position: absolute;
-  top: -.075rem;
+  top: 0;
   right: -.075rem;
   bottom: -.075rem;
   z-index: 6;
   display: block;
   content: "Browse";
-  height: 2.5rem;
+  height: 35px;
   padding: .5rem 1rem;
   line-height: 1.5;
-  color: #555;
-  background-color: #eee;
-  border: .075rem solid #ddd;
+  color: #f8f8f8;
+  font-weight:400;
+  background-color: $brand-primary;
   border-radius: 0 .25rem .25rem 0;
 }
 
 /* Focus */
 .file input:focus ~ .file-custom {
   box-shadow: 0 0 0 .075rem #fff, 0 0 0 .2rem $brand-primary;
+}
+
+.media-upload--progress {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	left: 0;
+	height:10px;
+	z-index:1;
+
+	.media-upload--bar {
+		height:10px;
+		background:transparentize( $brand-primary, 0.2);
+	}
+	.media-upload--percent {
+		position:absolute;
+		top:0;
+		right:0;
+		padding:1px 5px 0 0;
+		color:white;
+		font-weight:bold;
+		font-size:$font-size-small;
+		color:$text-muted;
+	}
 }
 

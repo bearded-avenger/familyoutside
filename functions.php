@@ -112,6 +112,7 @@ class foSetup {
 		require FO_THEME_DIR.'/inc/fo-login.php';
 		require FO_THEME_DIR.'/inc/process.bookmarks.php';
 		require FO_THEME_DIR.'/inc/process.user-info.php';
+		require FO_THEME_DIR.'/inc/class.submissions.php';
 	}
 
 	/**
@@ -187,6 +188,7 @@ class foSetup {
 	*/
 	function scripts() {
 
+		wp_enqueue_script('jquery-form');
 		wp_enqueue_style( 'fo-style', FO_THEME_URL.'/assets/css/style.css' );
 		wp_enqueue_script( 'fo-scripts', FO_THEME_URL.'/assets/js/scripts.js', array('jquery'), FO_THEME_VERSION, true );
 

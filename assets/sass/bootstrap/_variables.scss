@@ -246,8 +246,8 @@ $input-height-small:             (floor($font-size-small * $line-height-small) +
 //** `.form-group` margin
 $form-group-margin-bottom:       15px !default;
 
-$legend-color:                   $gray-dark !default;
-$legend-border-color:            #e5e5e5 !default;
+$legend-color:                   $text-color !default;
+$legend-border-color:            $border-color !default;
 
 //** Background color for textual input addons
 $input-group-addon-bg:           $gray-lighter !default;
