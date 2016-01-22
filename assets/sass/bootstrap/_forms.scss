@@ -893,11 +893,11 @@ input[type="checkbox"] {
 	top: 0;
 	width: 100%;
 	left: 0;
-	height:10px;
+	height:23px;
 	z-index:1;
 
 	.media-upload--bar {
-		height:10px;
+		height:23px;
 		background:transparentize( $brand-primary, 0.2);
 	}
 	.media-upload--percent {
@@ -905,10 +905,9 @@ input[type="checkbox"] {
 		top:0;
 		right:0;
 		padding:1px 5px 0 0;
-		color:white;
-		font-weight:bold;
+		color:#f8f8f8;
+		font-weight:400;
 		font-size:$font-size-small;
-		color:$text-muted;
 	}
 }
 

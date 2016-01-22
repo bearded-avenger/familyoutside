@@ -9,8 +9,6 @@
     ,	submit      = $('input[type="submit"]')
 
     $('#fo-submission input:file').live('change',function (){
-       	var fileName = $(this).val().split('\\').pop();
-       	$('.filename').text(fileName);
 
        	if( this.files[0].type == 'image/jpeg' || this.files[0].type == 'image/png' ) {
 
@@ -29,7 +27,32 @@
 	       	submit.attr('disabled','disabled');
 	    }
 
+	    previewImages( this.files )
     });
+
+		function previewImages( files ){
+
+		    var anyWindow = window.URL || window.webkitURL;
+
+	        for(var i = 0; i < files.length; i++){
+	          	var objectUrl = anyWindow.createObjectURL(files[i]);
+	          	$('#imagePreview').append('<img src="' + objectUrl + '" />');
+	          	window.URL.revokeObjectURL(files[i]);
+	        }
+		}
+
+    form.validate({
+	  	rules: {
+	    	hike_length: {
+	      		required: true,
+	      		digits: true
+	    	},
+	    	hike_time: {
+	      		required: true,
+	      		digits: true
+	    	}
+	  	}
+	});
 
     // bind form using 'ajaxForm'
     form.ajaxForm({
@@ -40,6 +63,7 @@
         beforeSend: function() {
             var percentVal = '0%';
             progress.removeClass('hide')
+            progress.parent().addClass('submitting')
             bar.width(percentVal);
             percent.html(percentVal);
         },
@@ -59,8 +83,9 @@
 
 	function showResponse(response, statusText, xhr, $form)  {
 
-		console.log(response);
+		form.remove();
 
+		results.html('Thanks for submitting your hike review! We will send you an email with the status of your submission within 48 hours.')
 
 	}
 

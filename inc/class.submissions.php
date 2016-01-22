@@ -27,14 +27,14 @@ class foSubmissions {
 					<legend>1. Hike Information</legend>
 					<!-- Title -->
 					<div class="form-group">
-					    <label for="post-title">Hike Title</label>
-					    <input type="text" class="form-control" id="post-title" name="post-title" placeholder="Post Title" required>
+					    <label for="post_title">Hike Title</label>
+					    <input type="text" class="form-control" id="post-title" name="post_title" placeholder="Post Title" required>
 					</div>
 
 					<!-- Content -->
 					<div class="form-group">
-					    <label for="post-content">Hike Content</label>
-					    <textarea rows="5" class="form-control" id="post-content" name="post-content" placeholder="Post Content" required></textarea>
+					    <label for="post_content">Hike Content</label>
+					    <textarea rows="5" class="form-control" id="post-content" name="post_content" placeholder="Post Content" required></textarea>
 					</div>
 
 				</div>
@@ -45,9 +45,9 @@ class foSubmissions {
 
 					<!-- Ages -->
 					<div class="form-group">
-				    	<label for="hike-age">Hike Ages</label>
+				    	<label for="hike_age">Hike Ages</label>
 				    	<div class="select">
-				    		<select name="hike-age" id="hike-age">
+				    		<select name="hike_age" id="hike-age" required>
 				    			<option value="4-and-up">Over 4</option>
 				    			<option value="8-and-up">Over 8</option>
 				    			<option value="12-and-up">Over 12</option>
@@ -58,9 +58,9 @@ class foSubmissions {
 
 					<!-- Difficulty -->
 					<div class="form-group">
-				    	<label for="hike-difficulty">Hike Difficulty</label>
+				    	<label for="hike_difficulty">Hike Difficulty</label>
 				    	<div class="select">
-				    		<select name="hike-difficulty" id="hike-difficulty">
+				    		<select name="hike_difficulty" id="hike-difficulty" required>
 				    			<option value="easy">Easy</option>
 				    			<option value="moderate">Moderate</option>
 				    			<option value="moderately-strenuous">Moderately Strenuous</option>
@@ -71,9 +71,9 @@ class foSubmissions {
 
 					<!-- Rating -->
 					<div class="form-group">
-				    	<label for="hike-rating">Hike Rating</label>
+				    	<label for="hike_rating">Hike Rating</label>
 				    	<div class="select">
-				    		<select name="hike-rating" id="hike-rating">
+				    		<select name="hike_rating" id="hike-rating" required>
 				    			<option value="one-star">One Star</option>
 				    			<option value="two-star">Two Star</option>
 				    			<option value="three-star">Three Star</option>
@@ -84,16 +84,14 @@ class foSubmissions {
 				    </div>
 
 				    <!-- Hike City and State -->
-					<div class="form-inline form-group">
-					  	<div class="form-group">
-					    	<label for="hike-city">Hike City</label>
-					    	<input type="text" class="form-control" id="hike-city" name="hike-city" placeholder="City">
-					  	</div>
-					  	<div class="form-group">
-					    	<label for="hike-state">Hike State</label>
-					    	<input type="text" class="form-control" id="hike-state" name="hike-state" placeholder="State">
-					  	</div>
-					</div>
+				  	<div class="form-group">
+				    	<label for="hike_city">Hike City</label>
+				    	<input type="text" class="form-control" id="hike-city" name="hike_city" placeholder="City" required>
+				  	</div>
+				  	<div class="form-group">
+				    	<label for="hike_state">Hike State</label>
+				    	<input type="text" class="form-control" id="hike-state" name="hike_state" placeholder="State" required>
+				  	</div>
 
 				</div>
 
@@ -104,26 +102,26 @@ class foSubmissions {
 
 					<!-- Length -->
 					<div class="form-group">
-					    <label for="hike-length">Hike Length</label>
-					    <input type="text" class="form-control" id="hike-length" name="hike-length" placeholder="Length of Hike" required>
+					    <label for="hike_length">Hike Length</label>
+					    <input type="text" class="form-control" id="hike-length" name="hike_length" placeholder="Length of Hike" required>
 					</div>
 
 					<!-- Time -->
 					<div class="form-group">
-					    <label for="hike-time">Time to Complete Hike (in minutes)</label>
-					    <input type="text" class="form-control" id="hike-time" name="hike-time" placeholder="Time (in minutes)" required>
+					    <label for="hike_time">Time to Complete Hike (in minutes)</label>
+					    <input type="text" class="form-control" id="hike-time" name="hike_time" placeholder="Time (in minutes)" required>
 					</div>
 
 					<!-- GPS Coords -->
 					<div class="form-group">
-					    <label for="hike-gps-coords">GPS Coordinates of Trail Head</label>
-					    <input type="text" class="form-control" id="hike-gps-coords" name="hike-gps-coords" placeholder="GPS Coordinates of Trail Head" required>
+					    <label for="hike_gps_coords">GPS Coordinates of Trail Head</label>
+					    <input type="text" class="form-control" id="hike-gps-coords" name="hike_gps_coords" placeholder="GPS Coordinates of Trail Head" required>
 					</div>
 
 					<!-- Location Description-->
 					<div class="form-group">
-					    <label for="hike-description">Location Description</label>
-					    <textarea rows="3" class="form-control" id="hike-description" name="hike-description" placeholder="Location Description" required></textarea>
+					    <label for="hike_description">Location Description</label>
+					    <textarea rows="3" class="form-control" id="hike-description" name="hike_description" placeholder="Location Description" required></textarea>
 					</div>
 
 				</div>
@@ -137,10 +135,12 @@ class foSubmissions {
 
 					<div class="form-group">
 				    	<label class="file">
-						  	<input type="file" name="post-images[]" id="post-image" aria-label="File browser example" multiple="multiple">
+						  	<input type="file" name="post_images[]" id="post-image" aria-label="File browser example" multiple="multiple" required>
 						  	<span class="file-custom"></span>
 						</label>
 					</div>
+
+					<div id="imagePreview"></div>
 
 				</div>
 
@@ -163,21 +163,22 @@ class foSubmissions {
 
 			if ( wp_verify_nonce( $_POST['nonce'], 'process-submission' ) ) {
 
-    			$title 			= isset( $_POST['post-title'] ) ? $_POST['post-title'] : false;
-    			$content 		= isset( $_POST['post-content'] ) ? $_POST['post-content'] : false;
+				/*
+    			$title 			= isset( $_POST['post_title'] ) ? $_POST['post_title'] : false;
+    			$content 		= isset( $_POST['post_content'] ) ? $_POST['post_content'] : false;
 
     			// categories
-    			$age 			= isset( $_POST['hike-age'] ) ? sanitize_text_field( $_POST['hike-age'] ) : false;
-    			$difficulty 	= isset( $_POST['hike-difficulty'] ) ? sanitize_text_field( $_POST['hike-difficulty'] ) : false;
-    			$rating 		= isset( $_POST['hike-rating'] ) ? sanitize_text_field( $_POST['hike-rating'] ) : false;
-    			$city 			= isset( $_POST['hike-city'] ) ? sanitize_text_field( $_POST['hike-city'] ) : false;
-    			$state 			= isset( $_POST['hike-state'] ) ? sanitize_text_field( $_POST['hike-state'] ) : false;
+    			$age 			= isset( $_POST['hike_age'] ) ? sanitize_text_field( $_POST['hike_age'] ) : false;
+    			$difficulty 	= isset( $_POST['hike_difficulty'] ) ? sanitize_text_field( $_POST['hike_difficulty'] ) : false;
+    			$rating 		= isset( $_POST['hike_rating'] ) ? sanitize_text_field( $_POST['hike_rating'] ) : false;
+    			$city 			= isset( $_POST['hike_city'] ) ? sanitize_text_field( $_POST['hike_city'] ) : false;
+    			$state 			= isset( $_POST['hike_state'] ) ? sanitize_text_field( $_POST['hike_state'] ) : false;
 
     			// post meta
-    			$length 		= isset( $_POST['hike-length'] ) ? sanitize_text_field( $_POST['hike-length'] ) : false;
-    			$time 			= isset( $_POST['hike-time'] ) ? sanitize_text_field( $_POST['hike-time'] ) : false;
-    			$gps_coords 	= isset( $_POST['hike-gps-coords'] ) ? sanitize_text_field( $_POST['hike-gps-coords'] ) : false;
-    			$location_desc 	= isset( $_POST['hike-description'] ) ? sanitize_text_field( $_POST['hike-description'] ) : false;
+    			$length 		= isset( $_POST['hike_length'] ) ? sanitize_text_field( $_POST['hike_length'] ) : false;
+    			$time 			= isset( $_POST['hike_time'] ) ? sanitize_text_field( $_POST['hike_time'] ) : false;
+    			$gps_coords 	= isset( $_POST['hike_gps_coords'] ) ? sanitize_text_field( $_POST['hike_gps_coords'] ) : false;
+    			$location_desc 	= isset( $_POST['hike_description'] ) ? sanitize_text_field( $_POST['hike_description'] ) : false;
 
 				$args = array(
 				  	'post_title'    => wp_strip_all_tags( $title ),
@@ -211,6 +212,7 @@ class foSubmissions {
 					update_post_meta( $post_id, '_hike_location', $gps_coords );
 					update_post_meta( $post_id, '_hike_location_desc', $location_desc );
 
+					// Images
 					if ( $_FILES ) {
 
 						$files = $_FILES['post-images'];
@@ -242,6 +244,9 @@ class foSubmissions {
 						}
 					}
 				}
+				*/
+
+				wp_send_mail( 'email@nickhaskins.com','New Hike Submission', $_POST );
 
 
 				wp_send_json_success();

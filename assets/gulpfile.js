@@ -27,6 +27,7 @@ gulp.task('scripts', function() {
   				'js/util--tab.js',
   				'js/util--tooltip.js',
   				'js/util--fitvids.js',
+  				'js/util--validation.js',
   				'js/portfolio.pack.min.js',
   				'js/process.create-account.js',
   				'js/process.bookmark.js',

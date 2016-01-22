@@ -4,4 +4,30 @@
 	background:darken($body-bg,3);
 	border:1px solid $border-color;
 	position:relative;
+	@include transition(padding-top .2s ease);
+
+	&.submitting {
+		padding-top:25px;
+	}
+}
+
+.form-control {
+	&.error {
+		border:1px solid $brand-danger;
+	}
+}
+
+label.error {
+	@extend .label;
+	@extend .label-danger;
+}
+
+#imagePreview {
+	@include clearfix;
+	img {
+		max-width:50px;
+		height:auto;
+		float:left;
+		margin-right:3px;
+	}
 }
