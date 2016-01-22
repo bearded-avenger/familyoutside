@@ -22,7 +22,9 @@
 
 	<div class="post--archive__content">
 		<h4 class="post--archive__title">
-			<?php echo get_the_title();?>
+			<a href="<?php echo get_permalink();?>">
+				<?php echo get_the_title();?>
+			</a>
 			<span class="label <?php echo sanitize_html_class( $class );?>"><?php echo esc_html( $category );?></span>
 		</h4>
 		<div class="post--archive__excerpt">
