@@ -22,6 +22,8 @@ class foSetup {
 		add_filter('excerpt_length', 		array($this,'excerpt_length'));
 		add_action( 'hike_after_content', 	array($this,'they_said'));
 
+		add_filter('widget_text', 'do_shortcode');
+
 		$this->includes();
 
 	}
@@ -139,6 +141,7 @@ class foSetup {
 		) );
 
 		add_filter( 'facetwp_proximity_store_distance', '__return_true' );
+
 
 	}
 
