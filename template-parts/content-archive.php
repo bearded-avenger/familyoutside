@@ -21,8 +21,10 @@
 	</div>
 
 	<div class="post--archive__content">
-		<?php the_title( '<h4 class="post--archive__title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h4>' );?>
-		<span class="label <?php echo sanitize_html_class( $class );?>"><?php echo esc_html( $category );?></span>
+		<h4 class="post--archive__title">
+			<?php echo get_the_title();?>
+			<span class="label <?php echo sanitize_html_class( $class );?>"><?php echo esc_html( $category );?></span>
+		</h4>
 		<div class="post--archive__excerpt">
 			<?php the_excerpt(); ?>
 		</div>

@@ -239,8 +239,8 @@ function fo_return_type_data( $post_id = 0 ){
 			$class = 'label-review';
 			break;
 		case 'post':
-			$label = 'News';
-			$class = 'label-news';
+			$label = 'Article';
+			$class = 'label-article';
 			break;
 	}
 

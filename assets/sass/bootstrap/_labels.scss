@@ -12,6 +12,7 @@
   white-space: nowrap;
   vertical-align: baseline;
   border-radius: .25em;
+  font-weight:400;
 
   // [converter] extracted a& to a.label
 
@@ -70,6 +71,6 @@ a.label {
 .label-review {
   	@include label-variant($color-review);
 }
-.label-news {
+.label-article {
 	@include label-variant($color-news);
 }
