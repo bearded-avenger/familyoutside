@@ -16,6 +16,10 @@ get_header(); ?>
 			</header>
 
 			<?php echo foSubmissions::form();?>
+		<?php else: ?>
+
+			<p>Oh snap! You have to be logged in to submit a hike. <a href="#" data-toggle="modal" data-target="#modal--login">Log in</a> or <a a href="#" data-toggle="modal" data-target="#modal--create-account">create a free account</a>!</p>
+
 		<?php endif; ?>
 
 	</main>
