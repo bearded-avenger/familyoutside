@@ -31,3 +31,19 @@ label.error {
 		margin-right:3px;
 	}
 }
+
+.submission-help-widget{
+
+	h4 {
+		margin-top:0;
+	}
+	ol {
+		padding-left:$padding;
+		margin:0;
+		font-size:$font-size-small;
+
+		li {
+			margin-bottom:$padding--sm;
+		}
+	}
+}

@@ -21,5 +21,5 @@ get_header(); ?>
 	</main>
 
 <?php
-get_sidebar();
+get_sidebar('hike-submission');
 get_footer();
