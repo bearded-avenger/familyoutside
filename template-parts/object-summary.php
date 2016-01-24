@@ -11,7 +11,7 @@
 
 	<div class="container">
 
-		<?php if ( 'hikes' == get_post_type() && is_single() ) {
+		<?php if ( ( 'hikes' == get_post_type() || 'activities' == get_post_type() ) && is_single() ) {
 
 			$location = fo_get_hike_gps_location();
 			$lat      = isset( $location['0'] ) ? $location['0'] : false;

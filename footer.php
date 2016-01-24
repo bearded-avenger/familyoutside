@@ -13,7 +13,7 @@
 
 	</div><!-- #content -->
 
-	<?php if ( ('hikes' == get_post_type() || 'reviews' == get_post_type() ) && is_single() ) {
+	<?php if ( ('hikes' == get_post_type() || 'reviews' == get_post_type() || 'activities' == get_post_type() ) && is_single() ) {
 		get_template_part('template-parts/object-summary');
 
 	}
@@ -36,7 +36,7 @@
 <?php wp_footer();?>
 <script async="" src="//platform.twitter.com/widgets.js"></script>
 <script async="" src="//connect.facebook.net/en_US/all.js"></script>
-<?php if ( 'hikes' == get_post_type()  && is_single() ): ?>
+<?php if ( ( 'hikes' == get_post_type() || 'activities' == get_post_type() )  && is_single() ): ?>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmZRRKW006CPNupNCPJx1jfVfdHiP3QvI&callback=initMap"async defer></script>
 <?php endif;?>
 <script>

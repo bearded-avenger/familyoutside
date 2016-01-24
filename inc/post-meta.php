@@ -148,6 +148,20 @@ class foPostMeta{
 	        'show_names'    => true,
 	    ) );
 
+    	$cmb->add_field( array(
+	        'name'       => 'Hike Location',
+	        'desc'       => 'GPS Coordinates for Hike Location',
+	        'id'         => '_hike_location',
+	        'type'       => 'text'
+	    ) );
+
+    	$cmb->add_field( array(
+	        'name'       => 'Hike Location Description',
+	        'desc'       => 'Description of how to get to hike area',
+	        'id'         => '_hike_location_desc',
+	        'type'       => 'textarea'
+	    ) );
+
 		$cmb->add_field( array(
 		    'name' => 'Gallery Images',
 		    'desc' => 'Upload some images for this hike',
