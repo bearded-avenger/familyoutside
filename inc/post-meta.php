@@ -6,6 +6,7 @@ class foPostMeta{
 
 		add_action('cmb2_init',		array($this,'hiking_meta') );
 		add_action('cmb2_init',		array($this,'product_meta') );
+		add_action('cmb2_init',		array($this,'activity_meta') );
 	}
 
 	// Hike Metaboxes
@@ -121,6 +122,42 @@ class foPostMeta{
 	        'id'         => '_feat_img_position',
 	        'type'       => 'text'
 	    ) );
+
+		$cmb->add_field( array(
+		    'name' => 'Hike Gallery Images',
+		    'desc' => 'Upload some images for this hike',
+		    'id'   => '_object_gallery',
+		    'type' => 'file_list',
+		    'options' => array(
+		        'add_upload_files_text' 	=> 'Add or Upload Images', // default: "Add or Upload Files"
+		        'file_text' 				=> 'Image', // default: "File:"
+		    )
+		) );
+
+	}
+
+	// Activities Metaboxes
+	public static function activity_meta(){
+
+	    $cmb = new_cmb2_box( array(
+	        'id'            => 'activity_meta',
+	        'title'         => __( 'Activity Details', 'cmb2' ),
+	        'object_types'  => array( 'activities' ),
+	        'context'       => 'normal',
+	        'priority'      => 'high',
+	        'show_names'    => true,
+	    ) );
+
+		$cmb->add_field( array(
+		    'name' => 'Gallery Images',
+		    'desc' => 'Upload some images for this hike',
+		    'id'   => '_object_gallery',
+		    'type' => 'file_list',
+		    'options' => array(
+		        'add_upload_files_text' 	=> 'Add or Upload Images', // default: "Add or Upload Files"
+		        'file_text' 				=> 'Image', // default: "File:"
+		    )
+		) );
 
 	}
 }
