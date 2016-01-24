@@ -81,7 +81,7 @@
 		</div>
 	</header>
 
-	<?php if ( ('hikes' == get_post_type() || 'reviews' == get_post_type() ) && is_single() ) {
+	<?php if ( ('hikes' == get_post_type() || 'reviews' == get_post_type() || 'activities' == get_post_type() ) && is_single() ) {
 		get_template_part('template-parts/object-mast');
 
 	}

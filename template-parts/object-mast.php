@@ -30,6 +30,8 @@
 
 	<?php echo fo_draw_object_gallery();?>
 
+	<?php if ( 'activities' !== get_post_type() ): ?>
+
 	<div class="object-mast--meta">
 		<div class="container">
 
@@ -79,5 +81,7 @@
 
 		</div>
 	</div>
+
+	<?php endif; ?>
 
 </div>

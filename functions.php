@@ -17,7 +17,6 @@ class foSetup {
 		add_action( 'after_setup_theme', 	array($this,'setup'));
 		add_action( 'widgets_init', 		array($this,'widgets_init') );
 		add_action( 'wp_enqueue_scripts', 	array($this,'scripts') );
-		//add_action('template_redirect', 	array($this,'load_posts'));
 		add_filter( 'pre_get_posts',	 	array($this,'custom_feed'));
 		add_filter('excerpt_length', 		array($this,'excerpt_length'));
 		add_action( 'hike_after_content', 	array($this,'they_said'));
@@ -41,7 +40,7 @@ class foSetup {
 	 			$query->set('post__not_in', fo_get_featured_ids() );
 	 		}
 
-	        $query->set('post_type', array('post', 'hikes','reviews'));
+	        $query->set('post_type', array('post', 'hikes','reviews','activities'));
 
 	    }
 	}
@@ -218,35 +217,6 @@ class foSetup {
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}
-	}
-
-
-	public function load_posts() {
-
-	 	// Add code to index pages.
-	 	if ( is_front_page() ) {
-	 		// Queue JS and CSS
-	 		wp_enqueue_script('fo-post-loader',FO_THEME_URL.'/assets/js/load-posts.js',array('jquery'),FO_THEME_VERSION,true);
-
-	 		$paged = ( get_query_var('paged') > 1 ) ? get_query_var('paged') : 1;
-
-	 		
-	 		global $wp_query;
-	 		$max = $wp_query->max_num_pages;
-
-	 		// Add some parameters for the JS.
-	 		wp_localize_script(
-	 			'fo-post-loader',
-	 			'pagi_vars',
-	 			array(
-	 				'startPage' => $paged,
-	 				'maxPages' => $max,
-	 				'loadMore' => 'Load More Posts',
-	 				'loading' => 'Loading...',
-	 				'nextLink' => next_posts($max, false)
-	 			)
-	 		);
-	 	}
 	}
 
 	public function they_said(){

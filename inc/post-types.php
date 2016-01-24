@@ -6,6 +6,7 @@ class foPostTypes{
 
 		add_action( 'init', 	array($this,'hike_type') );
 		add_action( 'init', 	array($this,'review_type') );
+		add_action( 'init', 	array($this,'activity_type') );
 	}
 
 
@@ -243,5 +244,40 @@ class foPostTypes{
 	}
 
 
+	function activity_type() {
+
+		// Activities
+		$labels = array(
+			'name'                		=> 'Activities',
+			'singular_name'       		=> 'Activity',
+			'menu_name'           		=> 'Activities',
+			'parent_item_colon'   		=> __( 'Parent Activity:', 'cgc-core' ),
+			'all_items'           		=> __( 'All Activities', 'cgc-core' ),
+			'view_item'           		=> __( 'View Activity', 'cgc-core' ),
+			'add_new_item'        		=> __( 'Add New Activity', 'cgc-core' ),
+			'add_new'             		=> __( 'New Activity', 'cgc-core' ),
+			'edit_item'           		=> __( 'Edit Activity', 'cgc-core' ),
+			'update_item'         		=> __( 'Update Activity', 'cgc-core' ),
+			'search_items'        		=> __( 'Search Activities', 'cgc-core' ),
+			'not_found'           		=> __( 'No Activities found', 'cgc-core' ),
+			'not_found_in_trash'  		=> __( 'No Activities found in Trash', 'cgc-core' ),
+		);
+		$args = array(
+			'label'               		=> __( 'Activities', 'cgc-core' ),
+			'description'         		=> __( 'Create activity reviews', 'cgc-core' ),
+			'labels'              		=> $labels,
+			'supports'            		=> array( 'editor','title', 'comments', 'thumbnail','excerpt'),
+			'public'              		=> true,
+ 			'show_ui' 					=> true,
+			'query_var' 				=> true,
+			'can_export' 				=> true,
+			'has_archive'				=> 'activities',
+			'rewrite'					=> array('with_front' => false, 'slug' => 'activities'),
+			'capability_type' 			=> 'post'
+		);
+
+		register_post_type( 'activities', $args );
+
+	}
 }
 new foPostTypes;

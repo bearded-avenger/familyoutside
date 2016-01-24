@@ -238,6 +238,10 @@ function fo_return_type_data( $post_id = 0 ){
 			$label = 'Review';
 			$class = 'label-review';
 			break;
+		case 'activities':
+			$label = 'Activity';
+			$class = 'label-activity';
+			break;
 		case 'post':
 			$label = 'Article';
 			$class = 'label-article';

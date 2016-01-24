@@ -74,3 +74,6 @@ a.label {
 .label-article {
 	@include label-variant($color-news);
 }
+.label-activity {
+	@include label-variant($color-activity);
+}
