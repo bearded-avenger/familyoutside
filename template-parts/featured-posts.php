@@ -1,7 +1,7 @@
 <?php
 
 $args = array(
-	'post_type' 		=> array('hikes', 'reviews', 'post'),
+	'post_type' 		=> array('hikes', 'reviews', 'post','activities'),
 	'post__in' 			=> fo_get_featured_ids(),
 	'posts_per_page' 	=> 3,
 	'orderby' 			=> 'post__in'
