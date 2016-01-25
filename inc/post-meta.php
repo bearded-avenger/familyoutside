@@ -163,6 +163,13 @@ class foPostMeta{
 	    ) );
 
 		$cmb->add_field( array(
+	        'name'       => 'Featured Image Background Positioning (optional)',
+	        'desc'       => 'Positioning for featured image',
+	        'id'         => '_feat_img_position',
+	        'type'       => 'text'
+	    ) );
+
+		$cmb->add_field( array(
 		    'name' => 'Gallery Images',
 		    'desc' => 'Upload some images for this hike',
 		    'id'   => '_object_gallery',
