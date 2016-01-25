@@ -272,7 +272,7 @@ class foPostTypes{
 			'query_var' 				=> true,
 			'can_export' 				=> true,
 			'has_archive'				=> 'activities',
-			'rewrite'					=> array('with_front' => false, 'slug' => 'activities'),
+			'rewrite'					=> array('with_front' => false, 'slug' => 'activity'),
 			'capability_type' 			=> 'post'
 		);
 
