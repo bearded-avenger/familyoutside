@@ -27,7 +27,7 @@
 					endif;
 				?>
 			</div>
-			<div class="content--comments--right">
+			<div class="content--comments__right">
 				<?php get_sidebar('comments');?>
 			</div>
 		</div>
