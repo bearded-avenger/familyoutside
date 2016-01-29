@@ -121,3 +121,18 @@
 		}
 	}
 }
+
+.content--comments {
+	@include clearfix;
+	margin-top:$padding * 2;
+	margin-bottom:$padding * 2;
+
+	.content--comments__left {
+		@include make-md-column(8);
+		padding-left:0;
+	}
+	.content--comments__right {
+		@include make-md-column(4);
+		padding-right:0;
+	}
+}

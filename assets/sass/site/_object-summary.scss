@@ -1,8 +1,9 @@
 .object-summary {
 	background:#FFF;
 	border-top:1px solid $border-color;
+	border-bottom:1px solid $border-color;
 	padding:$padding--sm 0;
-	margin:$padding 0 0;
+	margin:$padding 0;
 	@include clearfix();
 
 	h3 {

@@ -16,8 +16,22 @@
 	<?php if ( ('hikes' == get_post_type() || 'reviews' == get_post_type() || 'activities' == get_post_type() ) && is_single() ) {
 		get_template_part('template-parts/object-summary');
 
-	}
-	?>
+	} ?>
+
+	<?php if ( is_single() ): ?>
+		<div class="content--comments container">
+			<div class="content--comments__left">
+				<?php
+					if ( comments_open() || get_comments_number() ) :
+						comments_template();
+					endif;
+				?>
+			</div>
+			<div class="content--comments--right">
+				<?php get_sidebar('comments');?>
+			</div>
+		</div>
+	<?php endif; ?>
 
 	<footer id="colophon" class="footer" role="contentinfo">
 		<div class="container">
