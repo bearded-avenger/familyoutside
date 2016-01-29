@@ -6,9 +6,22 @@
 	.fo-share--wrap {
 		margin:$padding--sm 0 $padding;
 	}
+
 }
 
 #disqus_thread {
 	margin-top:$padding;
 	border-top:2px solid rgba(0,39,59,.08);
+}
+
+.featured-image {
+	img {
+		width:100%;
+		@include img-responsive();
+		padding:4px;
+		background:white;
+		border-radius:7px;
+		margin-bottom:$padding;
+		@include box-shadow(1px 1px 1px rgba(0,0,0,0.15));
+	}
 }

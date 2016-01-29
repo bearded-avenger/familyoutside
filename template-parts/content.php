@@ -15,6 +15,9 @@
 		the_title( '<h2 class="object-mast--title">','</h2>' );
 		family_outside_posted_on();
 		fo_social_sharing();
+		echo '<div class="featured-image">';
+			the_post_thumbnail('large');
+		echo '</div>';
 	} ?>
 
 	<div class="entry-content">
