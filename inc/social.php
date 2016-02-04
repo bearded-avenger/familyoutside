@@ -25,9 +25,12 @@ class foSocial{
 
 		$author = get_post_field( 'post_author', get_the_ID() );
 		?>
+
+		<?php if ( !is_front_page() ) { ?>
 		<!-- Standard Meta -->
 		<meta name="description" content="<?php echo esc_attr( self::excerpt() );?>">
 		<meta name="robots" content="index, follow" />
+		<?php } ?>
 
 		<!-- Facebook Open Graph -->
 		<meta property="og:url" content="<?php echo esc_url( get_permalink() );?>">
