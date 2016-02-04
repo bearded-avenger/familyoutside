@@ -25,6 +25,10 @@ class foSocial{
 
 		$author = get_post_field( 'post_author', get_the_ID() );
 		?>
+		<!-- Standard Meta -->
+		<meta name="description" content="<?php echo esc_attr( self::excerpt() );?>">
+		<meta name="robots" content="index, follow" />
+
 		<!-- Facebook Open Graph -->
 		<meta property="og:url" content="<?php echo esc_url( get_permalink() );?>">
 		<meta property="og:title" content="<?php echo esc_attr( get_the_title() );?>">
@@ -40,8 +44,8 @@ class foSocial{
 		<meta name="twitter:creator" content="@afamilyoutside">
 		<meta name="twitter:site" content="@afamilyoutside">
 		<meta name="twitter:title" content="<?php echo esc_attr( get_the_title() );?>">
-		<meta name="twitter:description" content="<?php echo self::excerpt();?>">
-		<meta name="twitter:domain" content="<?php echo get_permalink();?>">
+		<meta name="twitter:description" content="<?php echo esc_attr( self::excerpt() );?>">
+		<meta name="twitter:domain" content="<?php echo esc_url( get_permalink() );?>">
 		<?php echo !is_404() ? self::get_img('name','twitter', 'twitter') : false;?>
 
 		<?php
