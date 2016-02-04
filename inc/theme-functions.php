@@ -346,6 +346,8 @@ function fo_related_posts( $count = 3 ){
 
 	if( $q->have_posts() ) :
 
+		echo '<h3 class="container">You might also enjoy:</h3>';
+
 		echo '<ul class="fo-post-grid fo-post-grid-'.$count.' fo-post-grid--related container">';
 
 			while ( $q->have_posts() ) : $q->the_post();
