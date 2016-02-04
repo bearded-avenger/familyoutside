@@ -368,7 +368,7 @@ function fo_related_posts( $count = 3 ){
 */
 function fo_build_post_grid_item( $id = 0 ) {
 
-	$featured = wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'medium' );
+	$featured = wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'large' );
 
 
 	?>
