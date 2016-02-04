@@ -323,3 +323,68 @@ function fo_empty_state( $type = 'favorites', $buffer = false ) {
 	if ( true == $buffer ) { return ob_get_clean(); }
 
 }
+
+/**
+*
+*	Get some random posts for hikes or reviews
+*
+*	@since 1.2
+*/
+function fo_related_posts( $count = 3 ){
+
+	$type 	= get_post_type();
+	$current = get_the_ID();
+
+	$args = array(
+		'post_type' 	=> $type,
+		'posts_per_page' => $count,
+		'orderby'		=> 'rand',
+		'post__not_in' 	=> array( $current )
+	);
+
+	$q = new wp_query( $args );
+
+	if( $q->have_posts() ) :
+
+		echo '<ul class="fo-post-grid fo-post-grid-'.$count.' fo-post-grid--related container">';
+
+			while ( $q->have_posts() ) : $q->the_post();
+
+				echo fo_build_post_grid_item( get_the_ID() );
+
+			endwhile;
+
+		echo '</ul>';
+
+	endif;wp_reset_postdata();wp_reset_query();
+
+}
+
+/**
+*	Build a single post in a grid style design
+*
+*	@param $id int the id of the post
+*	@since since 1.2
+*/
+function fo_build_post_grid_item( $id = 0 ) {
+
+	$featured = wp_get_attachment_image_src( get_post_thumbnail_id( $id ), 'medium' );
+
+
+	?>
+		<li id="<?php get_the_ID();?>" <?php post_class( array('class' => 'fo-post-grid--item') );?> >
+			<div class="fo-post-grid--item__inner">
+				<a href="<?php echo get_permalink();?>">
+					<div class="fo-post-grid--item__image" style="background-image:url(<?php echo $featured[0];?>);"></div>
+				</a>
+				<div class="fo-post-grid--item__entry">
+					<?php echo the_title('<h4 class="fo-post-grid--item__title">','</h4>');?>
+					<?php echo the_excerpt();?>
+					<a class="btn btn-primary btn-sm" href="">Read More</a>
+				</div>
+			</div>
+
+		</li>
+	<?php
+
+}

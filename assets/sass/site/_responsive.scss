@@ -96,6 +96,16 @@
 		margin-top:$padding;
 	}
 
+	body {
+		.fo-post-grid {
+			display:block;
+		}
+
+		.fo-post-grid--item {
+			margin-bottom:$padding;
+		}
+	}
+
 }
 
 

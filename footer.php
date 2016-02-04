@@ -31,7 +31,14 @@
 				<?php get_sidebar('comments');?>
 			</div>
 		</div>
-	<?php endif; ?>
+
+		<?php if ( 'hikes' == get_post_type() ) :
+
+			echo fo_related_posts();
+
+		endif;
+
+	endif; ?>
 
 	<footer id="colophon" class="footer" role="contentinfo">
 		<div class="container">

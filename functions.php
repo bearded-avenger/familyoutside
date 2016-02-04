@@ -5,7 +5,7 @@ class foSetup {
 	public function __construct(){
 
 		// Set some constants
-		define('FO_THEME_VERSION', '0.1');
+		define('FO_THEME_VERSION', '1.2');
 
 		define('FO_THEME_DIR', 				get_template_directory());
 		define('FO_THEME_URL', 				get_template_directory_uri());
