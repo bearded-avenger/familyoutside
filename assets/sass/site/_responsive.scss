@@ -262,5 +262,12 @@
 			height:160px;
 		}
 
+		a img.alignleft,
+		a img.alignright {
+			float:none;
+			margin-left:auto;
+			margin-righ:auto;
+		}
+
 	}
 }
