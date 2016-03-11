@@ -7,24 +7,10 @@ get_header();
 
 	?><main id="primary" class="site-main" role="main"> <?php
 
+		echo facetwp_display( 'template', 'articles' );
+		echo facetwp_display( 'pager' );
 
-		$args = array(
-			'post_type' => 'post'
-		);
-		$q = new wp_query( $args );
-
-		if ( $q->have_posts() ) :
-
-			while ( $q->have_posts() ) : $q->the_post();
-
-				get_template_part( 'template-parts/content-archive');
-
-			endwhile;
-
-			fo_pagination();
-
-		endif;
-	?> </main> <?php
+	?></main> <?php
 
 get_sidebar();
 get_footer();

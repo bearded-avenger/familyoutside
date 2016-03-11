@@ -23,6 +23,7 @@
 
     h3 {
     	margin:5px 0 0;
+    	text-shadow:1px 1px 1px rgba(0,0,0,0.5);
     }
 
     h3,span {
@@ -35,7 +36,7 @@
     	text-decoration:none;
 
     	.featured-posts--img:after {
-    		background:transparentize($brand-primary,0.5);
+    		background:transparentize($brand-primary,0.4);
     	}
     }
 }

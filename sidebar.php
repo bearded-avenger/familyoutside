@@ -14,7 +14,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 
 <aside id="secondary" class="widget-area" role="complementary">
 
-	<?php if ( ( is_post_type_archive( array('hikes','reviews') ) || is_author() || is_page_template('template-hikes-map.php') ) && class_exists('FacetWP') ): ?>
+	<?php if ( ( is_post_type_archive( array('hikes','reviews') ) || is_author() || is_page_template('template-hikes-map.php') || is_page_template('template-news.php') ) && class_exists('FacetWP') ): ?>
 
 		<?php if ( is_page_template('template-hikes-map.php') || is_post_type_archive('hikes') ) { ?>
 			<ul class="filter-view">
@@ -51,6 +51,12 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 
 					echo '<h5 class="filter-title">Product Rating</h5>';
 					echo facetwp_display( 'facet', 'product_rating' );
+				}
+
+				if ( is_page_template('template-news.php') ){
+
+					echo '<h5 class="filter-title">Article Categories</h5>';
+					echo facetwp_display( 'facet', 'categories' );
 				}
 			?>
 		</div>
